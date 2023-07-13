@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: auto;
+    width: 100%;
+    background-color: black;
+}
+.container-fluid{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+   margin-top: 30px;
+}
+.footer{
+    background-color: white;
+    height: 30vh;
+    width: 100%;
+    position: relative;
+   top:100px;
+}
+.btn{
+    background-color: orange;
+}
+.btn:hover{
+    outline: black;
+    color: orange;
+}
