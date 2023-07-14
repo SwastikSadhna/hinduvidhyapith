@@ -8,11 +8,17 @@ html,body{
     width: 100%;
     background-color: black;
 }
-.container-fluid{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-   margin-top: 30px;
+@media (max-width:890px)
+{
+    #c3{
+    margin-top: 15px;  
+    }
+}
+@media (max-width:604px){
+    #c2{
+    margin-top: 15px;  
+    }
+
 }
 .footer{
     background-color: white;
