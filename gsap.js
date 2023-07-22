@@ -16,20 +16,24 @@ a.to("h2",{
     duration:1,
     
 })
-a.from("#card-body",{
-    opacity:0,
-    duration:1
-})
-a.from("#custom-cards",{
+a.from("#card-body,#card2,#card3",{
+    scale:0,
     opacity:0,
     duration:1,
+    stagger:0.4
+})
+
+gsap.from("#custom-cards,#custom-card2,#custom-card3",{
     scale:0,
+    opacity:0,
+    duration:1,
+    stagger:0.5,
     scrollTrigger:{
         trigger:"#custom-cards",
-        scroller:"body",
-        markers:true,
-        start:"top 100%",
-        end:"top 100%",
-        scrub:3
+        scroller:"body",  
+        // markers:true,
+        // start:"top 100%",
+        // end:"top 100%",
+        // scrub:3
     }
 })
