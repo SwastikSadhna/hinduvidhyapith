@@ -26,7 +26,7 @@ a.from("#card-body,#card2,#card3",{
 gsap.from("#custom-cards,#custom-card2,#custom-card3",{
     scale:0,
     opacity:0,
-    duration:1,
+    duration:0.5,
     stagger:0.5,
     scrollTrigger:{
         trigger:"#custom-cards",
