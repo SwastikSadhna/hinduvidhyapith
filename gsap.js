@@ -3,23 +3,23 @@ var a=gsap.timeline();
 a.from(".navbar",{
     y:-100,
     opacity:0,
-    duration:0.7,
+    duration:0.5,
     delay:0.5
 })
 
 a.from(".carousel-indicators,.carousel-inner,.carousel-item",{
     opacity:0,
-    duration:1,
+    duration:0.5,
 })
 a.to("h2",{
     opcaity:0,
-    duration:1,
+    duration:0.5,
     
 })
 a.from("#card-body,#card2,#card3",{
     scale:0,
     opacity:0,
-    duration:1,
+    duration:0.5,
     stagger:0.4
 })
 
