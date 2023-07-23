@@ -4,6 +4,10 @@
     z-index: -1;
 }
 
+.itemlist{
+    margin-left: 1.5rem;
+}
+
 #slide_img {
     height: 450px;
     margin-top: -100px;
