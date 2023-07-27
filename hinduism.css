@@ -1,5 +1,6 @@
 #navigation {
     z-index: 1;
+    background-color: orange;
 }
 
 #background {
@@ -8,6 +9,10 @@
     /* z-index: -1; */
 }
 
+.Navbar{
+    /* background-color: orange; */
+    background-color: transparent;
+}
 .navbar a:hover{
     color: rgb(48, 45, 45);
     font-weight: 600;
