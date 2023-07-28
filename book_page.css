@@ -1,0 +1,17 @@
+#content_img {
+    height: 240px;
+    margin: 10px;
+    border: 2px solid black;
+}
+
+.shloka {
+    color: brown;
+}
+
+#shloka_box {
+    background-color: rgba(252, 204, 116, 0.534);
+    border: 1px solid silver;
+    padding: 10px;
+    margin: 20px 0px;
+    text-align: center;
+}
