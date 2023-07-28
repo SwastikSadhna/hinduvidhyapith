@@ -25,7 +25,7 @@ a.to("h2",{
     opcaity:0,
     duration:0.5
 })
-a.from(".card",{
+a.from("#cards",{
     scale:0,
     rotate:-360,
     opacity:0,
