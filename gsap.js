@@ -26,18 +26,18 @@ a.to("h2",{
     opcaity:0,
     duration:0.5
 })
-// a.from("#cards",{
-//     scale:0,
-//     rotate:-360,
-//     opacity:0,
-//     duration:0.7,
-//     stagger:0.4,
-//     // scrollTrigger:{
-//     //     trigger:".card",
-//     //     scroller:
-//     //     markers:true,
-//     // }
-// })
+a.from("#cards",{
+    scale:0,
+    rotate:-360,
+    opacity:0,
+    duration:0.7,
+    stagger:0.4,
+    // scrollTrigger:{
+    //     trigger:".card",
+    //     scroller:
+    //     markers:true,
+    // }
+})
 
 gsap.from("#custom-cards,#custom-card2,#custom-card3",{
     scale:0,
