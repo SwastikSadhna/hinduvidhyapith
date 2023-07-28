@@ -1,5 +1,6 @@
 var a=gsap.timeline();
 
+
 a.from(".navbar-brand",{
     y:-100,
     opacity:0,
