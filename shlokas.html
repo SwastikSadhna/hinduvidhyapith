@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="book_page.css">
+    <link rel="icon" type="image/x-icon" href="IMG/logo_icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Home | hinduism.com</title>
+</head>
+
+<body style="display: flex;" class="container-fluid row">
+
+    <!-- slidebar -->
+    <div class="d-none d-md-block d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 260px;">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <svg class="bi pe-none me-2" width="40" height="32">
+                <use xlink:href="#bootstrap"></use>
+            </svg>
+            <span class="fs-4">Shlokas</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="#" class="nav-link active" aria-current="page">
+                    <img src="IMG/morning.png" height="24px">
+                     सुबह के श्लोक
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <img src="IMG/night.png" height="24px">
+                     रात्रि श्लोक
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <img src="IMG/eating.png" height="24px">
+                     खाने से पहले श्लोक
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <img src="IMG/study.png" height="24px">
+                     पढ़ाई से पहले श्लोक
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <img src="IMG/more.png" height="24px">
+                     अन्य श्लोक
+                </a>
+            </li>
+            <hr class="mt-5">
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <img src="IMG/back.png" height="24px">
+                     Back to Home
+                </a>
+            </li>
+        </ul>
+    </div>&nbsp;
+
+    <!-- toggle button -->
+    <div class="container row d-md-none">
+        <h2 class="col" style="margin: 10px;">Sponzeall</h2>
+        <a class="col-1" data-bs-toggle="offcanvas" href="#offcanvasWithBothOptions" role="button"
+            aria-controls="offcanvasWithBothOptionsLabel">
+            <img id="lines" src="IMG/menu.png" height="35px" style="margin: 10px 0px;">
+        </a>
+    </div>
+
+    <!-- popup slider -->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel" data-bs-theme="dark" style="overflow: scroll;">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"><img src="sponzeall.png" height="25px"
+                    width="180px"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="#" class="nav-link active" aria-current="page">
+                    <img src="IMG/morning.png" height="24px">
+                     सुबह के श्लोक
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <img src="IMG/night.png" height="24px">
+                     रात्रि श्लोक
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <img src="IMG/eating.png" height="24px">
+                     खाने से पहले श्लोक
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <img src="IMG/study.png" height="24px">
+                     पढ़ाई से पहले श्लोक
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <img src="IMG/more.png" height="24px">
+                     अन्य श्लोक
+                </a>
+            </li>
+            <hr class="mt-5">
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <img src="IMG/back.png" height="24px">
+                     Back to Home
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- content part -->
+    <div class="col container" style="margin-top: 10px;">
+        <h3>Morning Shlokas</h3>
+        <hr>
+    </div>
+</body>
+
+</html>
