@@ -1,11 +1,13 @@
 #content_img {
     height: 240px;
     margin: 10px;
+    width: 200px;
     border: 2px solid black;
 }
 
 .shloka {
     color: brown;
+    font-weight: 500;
 }
 
 #shloka_box {
