@@ -106,7 +106,7 @@
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel" data-bs-theme="dark" style="overflow: scroll;">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"><img src="sponzeall.png" height="25px" width="180px"></h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" id="closeBtn"></button>
         </div>
         <ul class="list-unstyled ps-0">
             <li class="mb-1">
@@ -224,11 +224,9 @@
 
         <nav aria-label="Page navigation example">
             <ul class="pagination">
-              <li class="page-item"><a class="page-link" onclick="pagination(-1)">Previous</a></li>
-              <li class="page-item"><a class="page-link" onclick="pagination(1)" id="firstPage">1</a></li>
-              <li class="page-item"><a class="page-link" onclick="pagination(2)">2</a></li>....
-              <li class="page-item"><a class="page-link" onclick="pagination(3)" id="lastPage">3</a></li>
-              <li class="page-item"><a class="page-link" onclick="pagination('next')">Next</a></li>
+              <li class="page-item"><a class="page-link" onclick="genPageNum(-1)">Previous</a></li>
+              <section id="dynamicNums" style="display: flex; flex-wrap: wrap;  "></section>
+              <li class="page-item"><a class="page-link" onclick="genPageNum(1)">Next</a></li>
             </ul>
           </nav>
     </div>

@@ -16,8 +16,8 @@ const pageData = {
     totalChapter : 0,
     chapterNumber : 0,
     description : "",
-    lastPage : 0,
-    firstPage : 0,
+    start : 1,
+    end : 10,
     image: "",
     verseCount : 0,
     currentVerse: 1
@@ -46,6 +46,7 @@ window.addEventListener("load",async ()=>{
 
     // console.table(data)
     setInitData(data);
+
     }
     catch(error){
         console.log(error)
@@ -63,6 +64,7 @@ async function setInitData(data){
     createChapters(1,pageData.total);
     await callApiChapter(1);
     await callApiSlok(1);
+    generateNumbers(pageData.start,pageData.end);
 }
 
 function createChapters(index,total){
@@ -75,8 +77,10 @@ function createChapters(index,total){
     let option = document.createElement("li");
     option.addEventListener("click",async ()=>{
         await callApiChapter(i);
+        document.querySelector("#closeBtn").click();
         await callApiSlok(1);
         window.scrollTo({top:0,left:0,behavior:"smooth"});
+        
     });
 
     let anchor = document.createElement("a");
@@ -94,8 +98,9 @@ function setContent(contentObj){
     chapterNumber.innerText = contentObj.chapter_number;
     description.innerText = contentObj.chapter_summary_hindi;
     pageData.chapterNumber = contentObj.chapter_number;
-    lastPage.innerText = contentObj.verses_count;
-    console.log(contentObj);
+    // lastPage.innerText = contentObj.verses_count;z
+    pageData.verseCount = contentObj.verses_count;
+    // console.log(contentObj);
 }
 
 
@@ -115,7 +120,7 @@ const callApiSlok =
         let req = await fetch(urlChapter+pageData.chapterNumber+"/verses/"+verse+"/",options);
         let data = await req.json();
    
-    console.log(data)
+    // console.log(data)
     switchSloka(data);
     }catch(error){
         console.log(error);
@@ -129,22 +134,55 @@ function setOptions(index,option){
 }
 
 function pagination(pageNum){
-    switch(pageNum){
-        case "next":
-            if(pageData.currentVerse <= pageData.verseCount)
-            pageData.currentVerse += 1;
-        break;
-
-        case -1 : 
-            if(pageData.currentVerse > 0)
-            pageData.currentVerse -= 1;
-        break;
-
-        default : 
             pageData.currentVerse = pageNum;
-    }
-    callApiSlok(pageData.currentVerse)
+            callApiSlok(pageData.currentVerse)
 }
+
+function genPageNum(decider){
+    if(decider == -1){
+        pageData.start >1 ? generatePages("previous") : 0; 
+         
+    }
+    else if(decider == 1){
+        pageData.end < pageData.verseCount ? generatePages("next") : 0;
+    }
+}
+
+function generatePages(param){
+    console.log("generating nums")
+    switch(param){
+        case "previous":
+             pageData.end = start -1;
+             pageData.start -= 10;
+
+             generateNumbers(pageData.start,pageData.end);
+            break;
+
+        case "next":
+            pageData.start += 10;
+            pageData.end += 10;
+            generateNumbers(pageData.start,pageData.end);
+            break;
+    }
+}
+
+
+function generateNumbers(start,end){
+    document.querySelector("#dynamicNums").innerHTML = "";
+    for (var i = start; i <= end && i <= pageData.verseCount; i++) {
+
+        let pageNum = document.createElement("li");
+        pageNum.setAttribute("class","page-item");
+
+        let anchor = document.createElement("a");
+        anchor.setAttribute("class","page-link");
+        anchor.setAttribute("onclick",`pagination(${i})`);
+        anchor.innerText = i;
+
+        pageNum.appendChild(anchor);
+        document.querySelector("#dynamicNums").appendChild(pageNum);
+    }
+}    
 
 function switchSloka(contentObj){
     tippni.innerText = contentObj.translations[contentObj.translations.length-1].description;
