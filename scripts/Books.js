@@ -136,6 +136,7 @@ function setOptions(index,option){
 function pagination(pageNum){
             pageData.currentVerse = pageNum;
             callApiSlok(pageData.currentVerse)
+            window.scrollTo({top:0,left:0,behavior:"smooth"})
 }
 
 function genPageNum(decider){
@@ -152,7 +153,7 @@ function generatePages(param){
     console.log("generating nums")
     switch(param){
         case "previous":
-             pageData.end = start -1;
+             pageData.end = pageData.start -1;
              pageData.start -= 10;
 
              generateNumbers(pageData.start,pageData.end);
