@@ -11,6 +11,14 @@ const options = {
 		'X-RapidAPI-Host': 'bhagavad-gita3.p.rapidapi.com'
 	}
 };
+const posters = [
+    "https://static.punjabkesari.in/multimedia/17_54_012157444geeta-1.jpg",
+    "https://i.pinimg.com/736x/92/2f/45/922f451b9d6bf1b8a4513459ba0b5cf0.jpg",
+    "https://n2.sdlcdn.com/imgs/b/e/7/Srimad-Bhagavad-Gita-as-it-SDL124307274-1-9e896.jpg",
+    "https://assets.app.gurumaa.com/images/store/bhagwad-gita-cover-Eng-2x.jpg",
+    "https://s3-us-west-2.amazonaws.com/issuewireassets/primg/76141/the-world-largest-and-longest-livestream-of-shrimad-bhagavad-geeta1080651654.png"
+]
+
 const pageData = {
     chapterName : "",
     totalChapter : 0,
@@ -100,6 +108,7 @@ function setContent(contentObj){
     pageData.chapterNumber = contentObj.chapter_number;
     // lastPage.innerText = contentObj.verses_count;z
     pageData.verseCount = contentObj.verses_count;
+    document.getElementById("content_img").setAttribute("src",posters[(parseInt(Math.random()*10)%5)]);
     // console.log(contentObj);
 }
 
@@ -188,5 +197,6 @@ function generateNumbers(start,end){
 function switchSloka(contentObj){
     tippni.innerText = contentObj.translations[contentObj.translations.length-1].description;
     slok.innerText = contentObj.text;
+    description.innerText = contentObj.commentaries[contentObj.commentaries.length - 2].description;
     window.scrollTo({top:0,left:0,behavior:"smooth"})
 }
