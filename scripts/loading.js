@@ -1,3 +1,3 @@
 window.addEventListener("load",()=>{
-    $(".loading").hide();
+    $(".loading").hide("slow");
 })

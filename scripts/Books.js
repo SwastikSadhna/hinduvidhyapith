@@ -51,7 +51,6 @@ let TotalChapter = 0;
 
 window.addEventListener("load",async ()=>{
     /* LOADING EFFECT CODE */
-    $(".loading").hide();
     try{
     let req = await fetch(urlChapter,options);
     let data = await req.json();
