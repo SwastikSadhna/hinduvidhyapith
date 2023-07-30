@@ -28,7 +28,7 @@ a.to("h2",{
 })
 a.from("#cards",{
     scale:0,
-    rotate:-360,
+    x:-400,
     opacity:0,
     duration:0.7,
     stagger:0.4,
