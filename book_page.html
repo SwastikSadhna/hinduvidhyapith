@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="css/book_page.css">
     <link rel="stylesheet" href="css/loading.css">
     <link rel="icon" type="image/x-icon" href="IMG/logo_icon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Home | hinduism.com</title>
     
 </head>
@@ -26,7 +28,8 @@
         </div>
 
     <!-- slidebar -->
-    <div class="col col-lg-4 col-md-5 flex-shrink-0 p-3 d-none d-md-block rounded text-bg-dark" data-bs-theme="dark" style="width: 260px; height: 100%; border: 1px solid lightgrey;">
+    <div class="col col-lg-4 col-md-5 flex-shrink-0 p-3 d-none d-md-block rounded text-bg-dark" data-bs-theme="dark"
+        style="width: 260px; height: 100%; border: 1px solid lightgrey;">
         <a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
             <svg class="bi pe-none me-2" width="30" height="24">
                 <use xlink:href="#bootstrap"></use>
@@ -103,17 +106,22 @@
 
     <!-- toggle button -->
     <div class="container row d-md-none">
+
         <h2 class="col" style="margin: 10px;">Sanatan</h2>
         <a class="col-1" data-bs-toggle="offcanvas" href="#offcanvasWithBothOptions" role="button" aria-controls="offcanvasWithBothOptionsLabel">
+
             <img id="lines" src="IMG/menu.png" height="35px" style="margin: 10px 0px;">
         </a>
     </div>
-      
+
     <!-- popup slider -->
-    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel" data-bs-theme="dark" style="overflow: scroll;">
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel" data-bs-theme="dark" style="overflow: scroll;">
         <div class="offcanvas-header">
+
           <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"><img src="sponzeall.png" height="25px" width="180px"></h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" id="closeBtn"></button>
+
         </div>
         <ul class="list-unstyled ps-0">
             <li class="mb-1">
@@ -181,7 +189,7 @@
                 </div>
             </li>
         </ul>
-      </div>
+    </div>
 
     <!-- content part -->
     <div class="col container" style="margin-top: 10px;">
@@ -199,6 +207,7 @@
                         <p class="card-text">भगवद्गीता प्राचीन भारत के संस्कृत महाकाव्य महाभारत में दर्ज एक प्रसंग है।
                             यह हिंदू धर्म में एक प्रभावशाली धार्मिक ग्रंथ है जो राजकुमार अर्जुन और हिंदू देवता विष्णु के
                             अवतार कृष्ण के बीच संवाद का रूप लेता है।</p>
+
                             <p><b>समस्त अध्याय:</b> 18<br><b>समस्त श्लोक:</b> 700</p>
                     </div>
                 </div>
@@ -209,17 +218,21 @@
         <h3>Chapter: <span id="chapterNumber"></span> ( <span id="chapterName"></span> )</h3>
         <hr>
         <div class="rounded" id="shloka_box">
+
             <h4><u>संस्कृत श्लोक - <span id="slokNo"></span></u></h4>
             <p class="shloka" id="slok">धृतराष्ट्र उवाच:<br>
                 || धर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः ||<br>
                 || मामकाः पाण्डवाश्चैव किमकुर्वत सञ्जय || 1 ||</p>
                 <!-- <p>dhṛitarāśhtra uvācha
+
                     dharma-kṣhetre kuru-kṣhetre samavetā yuyutsavaḥ
                     māmakāḥ pāṇḍavāśhchaiva kimakurvata sañjaya</p> -->
         </div>
         <div class="rounded" id="shloka_box" style="background-color: white;">
             <h4><u>अनुवाद</u></h4>
+
             <p id="tippni">धृतराष्ट्र ने कहा: हे संजय, कुरूक्षेत्र के पवित्र मैदान में एकत्र होकर और युद्ध की इच्छा से मेरे पुत्रों और पांडु के पुत्रों ने क्या किया?</p>
+
         </div>
 
         <div class="rounded" id="shloka_box" style="background-color: white;">
@@ -233,8 +246,9 @@
               <li class="page-item"><a class="page-link" onclick="genPageNum(-1)">Previous</a></li>
               <section id="dynamicNums" style="display: flex; flex-wrap: wrap;  "></section>
               <li class="page-item"><a class="page-link" onclick="genPageNum(1)">Next</a></li>
+
             </ul>
-          </nav>
+        </nav>
     </div>
 
     <script src="./scripts/Books.js"></script>
