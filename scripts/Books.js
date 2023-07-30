@@ -1,6 +1,7 @@
 console.log("Jay Shree Ram");
 
 
+
 // CONSTANTS
 const optionClass = "link-body-emphasis d-inline-flex text-decoration-none rounded";
 const urlChapter = 'https://bhagavad-gita3.p.rapidapi.com/v2/chapters/';
@@ -40,6 +41,7 @@ const description = document.querySelector("#description");
 const lastPage = document.querySelector("#lastPage");
 const firstPage = document.querySelector("#firstPage");
 const slok = document.querySelector("#slok");
+const slokNumber = document.querySelector("#slokNo");
 
 // Some Required variables
 let TotalChapter = 0;
@@ -48,6 +50,8 @@ let TotalChapter = 0;
 // Getter Function
 
 window.addEventListener("load",async ()=>{
+    /* LOADING EFFECT CODE */
+    $(".loading").show();
     try{
     let req = await fetch(urlChapter,options);
     let data = await req.json();
@@ -84,6 +88,7 @@ function createChapters(index,total){
 
     let option = document.createElement("li");
     option.addEventListener("click",async ()=>{
+        $(".loading").show("slow");
         await callApiChapter(i);
         document.querySelector("#closeBtn").click();
         await callApiSlok(1);
@@ -109,6 +114,8 @@ function setContent(contentObj){
     // lastPage.innerText = contentObj.verses_count;z
     pageData.verseCount = contentObj.verses_count;
     document.getElementById("content_img").setAttribute("src",posters[(parseInt(Math.random()*10)%5)]);
+    /* LOADING EFFECT CODE */
+    $(".loading").hide();
     // console.log(contentObj);
 }
 
@@ -131,6 +138,7 @@ const callApiSlok =
    
     // console.log(data)
     switchSloka(data);
+    slokNumber.innerText = pageData.currentVerse;
     }catch(error){
         console.log(error);
     }
@@ -143,8 +151,9 @@ function setOptions(index,option){
 }
 
 function pagination(pageNum){
+            $(".loading").show();
             pageData.currentVerse = pageNum;
-            callApiSlok(pageData.currentVerse)
+            callApiSlok(pageData.currentVerse);
             window.scrollTo({top:0,left:0,behavior:"smooth"})
 }
 
@@ -198,5 +207,7 @@ function switchSloka(contentObj){
     tippni.innerText = contentObj.translations[contentObj.translations.length-1].description;
     slok.innerText = contentObj.text;
     description.innerText = contentObj.commentaries[contentObj.commentaries.length - 2].description;
-    window.scrollTo({top:0,left:0,behavior:"smooth"})
+    window.scrollTo({top:0,left:0,behavior:"smooth"});
+        /* LOADING EFFECT CODE */
+        $(".loading").hide();
 }

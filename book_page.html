@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link rel="stylesheet" href="css/book_page.css">
     <link rel="stylesheet" href="css/loading.css">
     <link rel="icon" type="image/x-icon" href="IMG/logo_icon.png">
@@ -102,7 +103,7 @@
 
     <!-- toggle button -->
     <div class="container row d-md-none">
-        <h2 class="col" style="margin: 10px;">Sponzeall</h2>
+        <h2 class="col" style="margin: 10px;">Sanatan</h2>
         <a class="col-1" data-bs-toggle="offcanvas" href="#offcanvasWithBothOptions" role="button" aria-controls="offcanvasWithBothOptionsLabel">
             <img id="lines" src="IMG/menu.png" height="35px" style="margin: 10px 0px;">
         </a>
@@ -208,7 +209,7 @@
         <h3>Chapter: <span id="chapterNumber"></span> ( <span id="chapterName"></span> )</h3>
         <hr>
         <div class="rounded" id="shloka_box">
-            <h4><u>संस्कृत श्लोक</u></h4>
+            <h4><u>संस्कृत श्लोक - <span id="slokNo"></span></u></h4>
             <p class="shloka" id="slok">धृतराष्ट्र उवाच:<br>
                 || धर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः ||<br>
                 || मामकाः पाण्डवाश्चैव किमकुर्वत सञ्जय || 1 ||</p>
