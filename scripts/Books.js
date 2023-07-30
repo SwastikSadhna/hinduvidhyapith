@@ -91,9 +91,10 @@ function createChapters(index,total){
         $(".loading").show("slow");
         await callApiChapter(i);
         document.querySelector("#closeBtn").click();
+        pageData.currentVerse = 1;
         await callApiSlok(1);
         window.scrollTo({top:0,left:0,behavior:"smooth"});
-        
+        generateNumbers(pageData.start=1,pageData.end=10);
     });
 
     let anchor = document.createElement("a");
