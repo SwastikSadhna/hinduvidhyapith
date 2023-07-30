@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/shlokas.css">
+    <link rel="stylesheet" href="css/loading.css">
+    <link rel="icon" type="image/x-icon" href="IMG/logo_icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Home | hinduism.com</title>
+</head>
+
+<body style="display: flex;" class="container-fluid row">
+
+    <!-- loading -->
+    <div class="loading">
+        <img src="IMG/loading.gif" height="50px">
+        </div>
+
+    <!-- slidebar -->
+    <div class="d-none d-md-block d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 260px;">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <span class="fs-4">Shlokas</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="#" class="nav-link active" aria-current="page">
+                    <img src="IMG/morning.png" height="28px">
+                     सुबह के श्लोक
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <img src="IMG/night.png" height="28px">
+                     रात्रि श्लोक
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <img src="IMG/eating.png" height="28px">
+                     खाने से पहले श्लोक
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <img src="IMG/study.png" height="28px">
+                     पढ़ाई से पहले श्लोक
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <img src="IMG/more.png" height="28px">
+                     अन्य श्लोक
+                </a>
+            </li>
+            <hr class="mt-5">
+            <li>
+                <a href="index.html" class="nav-link text-white">
+                    <img src="IMG/back.png" height="28px">
+                     Back to Home
+                </a>
+            </li>
+        </ul>
+    </div>&nbsp;
+
+    <!-- toggle button -->
+    <div class="container row d-md-none">
+        <h2 class="col" style="margin: 10px;">Hinduism</h2>
+        <a class="col-1" data-bs-toggle="offcanvas" href="#offcanvasWithBothOptions" role="button"
+            aria-controls="offcanvasWithBothOptionsLabel">
+            <img id="lines" src="IMG/menu.png" height="35px" style="margin: 10px 0px;">
+        </a>
+    </div>
+
+    <!-- popup slider -->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel" data-bs-theme="dark" style="overflow: scroll;">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Shlokas</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="#" class="nav-link active" aria-current="page">
+                    <img src="IMG/morning.png" height="25px">
+                     सुबह के श्लोक
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <img src="IMG/night.png" height="25px">
+                     रात्रि श्लोक
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <img src="IMG/eating.png" height="25px">
+                     खाने से पहले श्लोक
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <img src="IMG/study.png" height="25px">
+                     पढ़ाई से पहले श्लोक
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <img src="IMG/more.png" height="25px">
+                     अन्य श्लोक
+                </a>
+            </li>
+            <hr class="mt-5">
+            <li>
+                <a href="index.html" class="nav-link text-white">
+                    <img src="IMG/back.png" height="25px">
+                     Back to Home
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- content part -->
+    <div class="col container" style="margin-top: 10px;">
+        <h3>Morning Shlokas</h3>
+        <hr>
+        <p>The word shloka means 'song', and originates from the root śru or ‘hear’. A shloka is generally a couplet of Sanskrit verse, especially one in which each line contains sixteen syllables. Shlokas, which are repeated to aid concentration in meditation, have its origins from the Vedic period. Indians have used the science of sacred sound for centuries as an aid to humans who seek to communicate with the divine spirit, within themselves and the universe. Recent research into the effects of chanting has discovered a variety of benefits including the effect of raising the level of vibration of the individual practicing the chant. This makes the practitioner gain peace, feel calm and become more centered, which in turn allows the person to channelize the positive energy received in a variety of ways.<br><br>
+            
+            Hinduism also known as the Sanatan Dharma is one of the greatest and finest of ancient religions. Its mythological stories and religious books have mentioned that in order to attain Moksha, one should be closer to God. Being close to God will also make our life peaceful and will keep us away from negative happenings. Know about 7 must chant morning prayers for hindus.<br><br>
+
+            So how to be close to God? God cannot be seen, he cannot be touched, he can only be felt. Then how is it possible for us to be close to him? Worship him! Worshiping him will enable us to attain a spiritual satisfaction, positive energy and a peaceful mind.</p>
+
+        <div class="border rounded p-3 mt-5 my-3">
+            <h5>1. Salutations to Laxmimata</h5><br>
+            <p id="shlokas">कराग्रे वसतु लक्ष्मी, करमध्ये सरस्वती, करमूले स्थितः गौरी, प्रभाते का दर्शनम.</p>
+            <p><b>Meaning :</b> The fingertips of the palm is the dwelling of (Goddess) Shri Lakshmidevi, the central portion of the palm is of (Goddess) Shri Saraswatidevi and the base of the palm of Deity Shri Govind; hence, one should look at the palms immediately after waking up in the morning.</p>
+        </div>
+        <img src="IMG/shlokas_img (1).jpg" id="shlokas_imgs">
+
+        <div class="border rounded p-3 my-3">
+            <h5>2. Salutations to Shri Ganesh</h5><br>
+            <p id="shlokas">वक्रतुंड महाकाय सूर्यकोटि समप्रभ । निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ।।</p>
+            <p><b>Meaning :</b> O Shri Ganesh, the destroyer of evildoers, the powerful one, who has the radiance of a thousand suns. Let all my actions be accomplished without any obstacles.</p>
+        </div>
+        <img src="IMG/shlokas_img (1).png" id="shlokas_imgs">
+
+        <div class="border rounded p-3 my-3">
+            <h5>3. Salutation to the Deity</h5><br>
+            <p id="shlokas">ब्रह्मा मुरारिस्त्रिपुरांतकारी भानुः शशी भूमिसुतो बुधश्च । गुरुश्च शुक्रः शनिराहुकेतवः कुर्वन्तु सर्वे मम सुप्रभातम् ।।</p>
+            <p><b>Meaning :</b> May the trinity of Deities – Brahma the Creator, Shrivishnu the Nurturer and the slayer of the demon Moor, Shiva the Destroyer and slayer of the demon Tripur, and the nine Cosmic bodies Surya (Sun), Chandra (Moon), Mangal (Mars), Buddh (Mercury), Guru (Jupiter), Shukra (Venus), Shani (Saturn), Rahu (Neptune) and Ketu (Pluto) make my morning auspicious.</p>
+        </div>
+        <img src="IMG/shlokas_img (2).png" id="shlokas_imgs">
+
+        <div class="border rounded p-3 my-3">
+            <h5>4. Remembering virtuous souls</h5><br>
+            <p id="shlokas">पुण्यश्लोको नलो राजा पुण्यश्लोको युधिष्ठिरः । पुण्यश्लोको विदेहश्च पुण्यश्लोको जनार्दनः ।।</p>
+            <p><b>Meaning :</b> I remember the virtuous Nal, Yudhishthir, Videh (King Janak) and Shri Janardan.</p>
+        </div>
+
+
+    <!-- footer part -->
+    <div class="container-fluid mt-5">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+              <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+            <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Hunduism Site</span>
+          </div>
+      
+          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-2"><a class="text-body-secondary" href="#"><img src="IMG/twitter.png" height="25"></a></li>
+            <li class="ms-2"><a class="text-body-secondary" href="#"><img src="IMG/instagram.png" height="25"></a></li>
+            <li class="ms-2"><a class="text-body-secondary" href="#"><img src="IMG/facebook.png" height="25"></a></li>
+          </ul>
+        </footer>
+      </div>
+    </div>
+</body>
+
+</html>

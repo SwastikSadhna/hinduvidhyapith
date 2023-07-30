@@ -1,0 +1,13 @@
+
+.loading {
+    height: 100%;
+    width:100%;
+    position:fixed;
+    top:0; left:0;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(30, 31, 31, 0.877);
+    align-items: center;
+    z-index: 2;
+    motion: none;
+}

@@ -14,6 +14,11 @@
     border-bottom: 2px solid black;
 }
 
+
+#card-button button:hover{
+    background-color: #6c757d ;
+}
+
 .active{
     color: rgb(48, 45, 45);
     border-bottom: 1px solid black;
