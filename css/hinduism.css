@@ -9,7 +9,7 @@
     /* z-index: -1; */
 }
 
-.navbar a:hover{
+#nav-item a:hover{
     color: rgb(48, 45, 45);
     border-bottom: 2px solid black;
 }
