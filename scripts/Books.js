@@ -51,7 +51,7 @@ let TotalChapter = 0;
 
 window.addEventListener("load",async ()=>{
     /* LOADING EFFECT CODE */
-    $(".loading").show();
+    $(".loading").hide();
     try{
     let req = await fetch(urlChapter,options);
     let data = await req.json();
@@ -71,17 +71,17 @@ window.addEventListener("load",async ()=>{
 
 async function setInitData(data){
     pageData.total = data.length;
-    console.log(TotalChapter)
-    createChapters(0,pageData.total);
-    createChapters(1,pageData.total);
+    console.log(data)
+    createChapters(0,pageData.total,data);
+    createChapters(1,pageData.total,data);
     await callApiChapter(1);
     await callApiSlok(1);
     generateNumbers(pageData.start,pageData.end);
 }
 
-function createChapters(index,total){
+function createChapters(index,total,data){
     for(let i=1; i<=total; i++){
-    let chapter = "Chapter - "+i;
+    let chapter = "Chapter - "+i +` (${data[i-1].verses_count})`;
 
     //`<li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">अध्याय
     //  1</a></li>`;
