@@ -19,5 +19,11 @@
 }
 
 #content-part{
-    margin-left: 18%;
+    margin-left: 260px;
+}
+
+@media (max-width: 767px) {
+    #content-part {
+        margin-left: 5px;
+    }
 }
