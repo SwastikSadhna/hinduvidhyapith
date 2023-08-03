@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/18puran.css">
+    <link rel="stylesheet" href="css/loading.css">
+    <link rel="icon" type="image/x-icon" href="IMG/logo_icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="scripts/loading.js"></script>
+    <title>Home | hinduism.com</title>
+</head>
+
+<body style="display: flex;" class="container-fluid row">
+
+    <!-- loading -->
+    <div class="loading">
+        <img src="IMG/loading.gif" height="50px">
+    </div>
+
+    <!-- slidebar -->
+    <div class="d-none d-md-block d-flex flex-column flex-shrink-0 p-3 text-bg-dark position-fixed"
+        style="width: 260px; height:100vh">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <span class="fs-4">सनातन को जानिए</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="./4Veds.html" class="nav-link active" aria-current="page">
+                    <!-- <img src="IMG/morning.png" height="28px"> -->
+                    4 वेद
+                </a>
+            </li>
+            <li>
+                <a href="./Know_sanatan(2).html" class="nav-link text-white">
+                    <!-- <img src="IMG/night.png" height="28px"> -->
+                    33 कोटि देवता
+                </a>
+            </li>
+            <li>
+                <a href="./18puran.html" class="nav-link text-white">
+                    <!-- <img src="IMG/eating.png" height="28px"> -->
+                    18 पुराण
+                </a>
+            </li>
+            <li>
+                <a href="./Know_sanatan(4).html" class="nav-link text-white">
+                    <!-- <img src="IMG/study.png" height="28px"> -->
+                    108 उपनिषद
+                </a>
+            </li>
+            <li>
+                <a href="./Know_sanatan(5).html" class="nav-link text-white">
+                    <!-- <img src="IMG/more.png" height="28px"> -->
+                    अन्य बातें
+                </a>
+            </li>
+            <hr class="mt-5">
+            <li>
+                <a href="index.html" class="nav-link text-white">
+                    <img src="IMG/back.png" height="28px">
+                    Back to Home
+                </a>
+            </li>
+        </ul>
+    </div>&nbsp;
+
+    <!-- toggle button -->
+    <div class="container row d-md-none">
+        <h2 class="col" style="margin: 10px;">Hinduism</h2>
+        <a class="col-1" data-bs-toggle="offcanvas" href="#offcanvasWithBothOptions" role="button"
+            aria-controls="offcanvasWithBothOptionsLabel">
+            <img id="lines" src="IMG/menu.png" height="35px" style="margin: 10px 0px;">
+        </a>
+    </div>
+
+    <!-- popup slider -->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel" data-bs-theme="dark" style="overflow: scroll;">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Shlokas</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="./4Veds.html" class="nav-link active" aria-current="page">
+                    <!-- <img src="IMG/morning.png" height="25px"> -->
+                    4 वेद
+                </a>
+            </li>
+            <li>
+                <a href="./18puran.html" class="nav-link text-white">
+                    <!-- <img src="IMG/night.png" height="25px"> -->
+                    33 कोटि देवता
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <!-- <img src="IMG/eating.png" height="25px"> -->
+                    18 पुराण
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <!-- <img src="IMG/study.png" height="25px"> -->
+                    108 उपनिषद
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <!-- <img src="IMG/more.png" height="25px"> -->
+                    अन्य बातें
+                </a>
+            </li>
+            <hr class="mt-5">
+            <li>
+                <a href="index.html" class="nav-link text-white">
+                    <img src="IMG/back.png" height="25px">
+                    Back to Home
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="col container" style="margin-top: 10px; " id="content-part">
+        <h3><b>हिंदू धर्म के मुख्य 18 पुराण</b></h3>
+        <hr>
+        <p><i class="fa-solid fa-share"></i> क्या आप जानते हैं कि पुराण क्या है? पुराण का शाब्दिक अर्थ क्या है? और पुराण
+            कितने हैं ?</p>
+
+        <p><i class="fa-solid fa-share"></i> पुराण का अर्थ है प्राचीन आख्यान अथवा रचना। हमारे सनातन धर्म में सभी धार्मिक
+            ग्रंथों में से पुराण का विशेष महत्व है तथा ये प्राचीनतम ग्रंथों में से एक है। इन पुराणों में लिखी बातें और
+            ज्ञान आज भी सही साबित हो रहे
+            हैं। पुराण में लिखा ज्ञान हमारी हिन्दू संस्कृति और सभ्यता का आधार है। इस बात से सभी सहमत हैं लेकिन पुराण
+            क्या है और पुराण कितने हैं ये सभी नहीं जानते।</p>
+
+        <p><i class="fa-solid fa-share"></i> पुराण में हिन्दू धर्म के ईश्वर, संतों, ऋषि मुनियों और वीर राजाओं, उनके
+            द्वारा रची लीलाओं, उनके जीवन और उनके सिद्धान्तों को विस्तार रूप से दर्शाया गया है। पुराण संस्कृत भाषा में
+            लिखे गए, जिन्हें बाद में हिंदी और अंग्रेजी में अनुवादित किया गया ताकि आम जनता पुराणों को पढ़ पाए, समझ पाए और
+            जीवन में अपना पाए। पुराण कितने हैं
+            और उनका नाम क्या है और उनमें क्या क्या बताया गया है ये सब आज आपको इस भाग में पता चलने वाला है।</p>
+
+        <!--   <img src="IMG/vedas in hindu dharma.png" id="shlokas_imgs"> -->
+        <h3><b>पुराण कितने हैं?</b></h3>
+        <hr>
+        <p><i class="fa-solid fa-share"></i> पुराण क्या है आपने समझ लिया लेकिन क्या आप जानते हैं पुराण कितने हैं ? आपके
+            सवाल का जवाब है, हिन्दू धर्म में कुल 18 पुराण है जिनके नाम है- ब्रह्म पुराण, पद्म पुराण, विष्णु पुराण, वायु
+            पुराण, भागवत पुराण, नारद पुराण, मार्कण्डेय पुराण, अग्नि पुराण, भविष्य पुराण, ब्रह्म वैवर्त पुराण, लिङ्ग
+            पुराण, वाराह पुराण, स्कन्द पुराण, वामन पुराण, कूर्म पुराण, मत्स्य पुराण, गरुड़ पुराण, ब्रह्माण्ड पुराण।</p>
+
+        <p><i class="fa-solid fa-share"></i> इन सभी पुराणों में देवी देवताओं पर आधारित कई गाथाएँ कही गई हैं जिसमें पाप -
+            पुण्य और धर्म - अधर्म के युद्ध के बारे में भी बताया गया है। कुछ पुराणों में इस खुबसूरत सृष्टि की रचना से
+            लेकर उसके अंत तक का विवरण है। पुराण में व्यक्ति के जन्म से लेकर उसकी मृत्यु के बाद स्वर्ग या नरक तक की
+            यात्रा का भी विवरण है।</p>
+
+        <p><i class="fa-solid fa-share"></i> शास्त्रों के अनुसार ब्रह्म देव ने अपने पुत्र मारीच को कहा था जो व्यक्ति
+            अपने जीवन काल में इन 18 पुराणों के नाम और उसकी लिखित गाथा की विषय सूची का श्रवण या पाठ करता है वह इन सभी 18
+            पुराणों से मिलने वाले पुण्य को पालेता है और साथ ही उसे मोह माया से मुक्ति मिल जाती है।</p>
+
+        <h3><b>18 पुराणों के नाम :</b></h3>
+        <hr>
+        
+        <!-- From Here the All puran Starts  d-flex justify-content-evenly flex-wrap flex-column -->
+        <div class="content-Purans container-fluid  row row-cols-auto">
+            <p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample1" role="button"
+                    aria-expanded="false" aria-controls="collapseExample1">
+                    (1) ब्रह्म पुराण
+                </a>
+            </p>
+            <div class="collapse" id="collapseExample1">
+                <div class="card card-body  bg-light">
+                    <div class="puran-img d-flex justify-content-center">
+                        <img src="./IMG/Brahma puran.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <hr>
+                    <p><i class="fa-solid fa-share"></i> ब्रह्म पुराण के रचयिता कौन है? 18 पुराण के नाम की लिस्ट में
+                        ब्रह्म पुराण सबसे पहला और पुराना पुराण है। ब्रह्मपुराण के रचयिता महर्षि वेद व्यास जी है तथा इस
+                        पुराण को महापुराण भी कहते हैं। व्यास जी ने इसे संस्कृत भाषा में लिखा।</p>
+                    <p><i class="fa-solid fa-share"></i> महर्षि व्यास जी ने ब्रह्म पुराण के 10 हज़ार श्लोकों में कई
+                        महत्वपूर्ण बातों और कथाओं के बारे में बताया है, जैसे सृष्टि का जन्म कैसे हुआ, धरती पर जल की
+                        उत्पत्ति कैसे हुई, ब्रह्मा जी और देव दानवों का जन्म कैसे हुआ, सूर्य और चन्द्र के वंशज कौन थे,
+                        श्री राम और कृष्ण की अवतार गाथा, ब्रह्म पूजन विधि, माँ पार्वती और शिव जी के विवाह, विष्णु जी की
+                        पूजन विधि, श्राद्ध, भारतवर्ष आदि के बारे
+                        में विस्तार से बताया गया है।</p>
+                    <p><i class="fa-solid fa-share"></i> इसमें अनेक तीर्थों के बारे में सुन्दर और भक्तिमय आख्यान भी दिए
+                        गए है, साथ ही इस पुराण में कलयुग का भी विवरण दिया गया है। ब्रह्म देव् को आदि देव भी कहते है
+                        इसलिए इस पुराण को आदि पुराण के नाम से भी जाना जाता है। </p>
+                    <button class="btn btn-primary " type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <p>
+                <a class="btn btn-primary " data-bs-toggle="collapse" href="#collapseExample2" role="button"
+                    aria-expanded="false" aria-controls="collapseExample2">
+                    (2) पद्म पुराण
+                </a>
+            </p>
+            <div class="collapse" id="collapseExample2">
+                <div class="card card-body  bg-light">
+                    <div class="puran-img d-flex justify-content-center">
+                        <img src="./IMG/Brahma puran.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <hr>
+                    <p><i class="fa-solid fa-share"></i> पद्म का अर्थ है कमल का फूल, इसकी रचना भी महर्षि वेद व्यास जी ने
+                        संस्कृत भाषा में की तथा इसमें 55 हज़ार श्लोक है। इस पुराण में बताया गया है कि ब्रह्मदेव श्री
+                        नारायण जी के नाभि कमल से उत्पन्न हुए थे और उन्होंने सृष्टि की रचना की।</p>
+                    <p><i class="fa-solid fa-share"></i> इस पुराण के 5 खंडो में श्रुष्टि खंड, भूमि खंड, स्वर्ग खंड,
+                        पाताल खंड और उत्तर खंड में भगवान विष्णु की महिमा, श्री कृष्ण और श्री राम की लीलाओं, पवित्र
+                        तीर्थों की महानता, तुलसी महिमा, विभिन व्रतों के बारे में सुन्दर और अद्भुत विवरण दिया गया है।</p>
+                    <button class="btn btn-primary " type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample3" role="button"
+                    aria-expanded="false" aria-controls="collapseExample3">
+                    (3) विष्णु पुराण
+                </a>
+            </p>
+            <div class="collapse" id="collapseExample3">
+                <div class="card card-body  bg-light">
+                    <div class="puran-img d-flex justify-content-center">
+                        <img src="./IMG/vishnu puran.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <hr>
+                    <p><i class="fa-solid fa-share"></i> विष्णु पुराण एक पवित्र पुराण है जिसमें 23000 श्लोकों के द्वारा
+                        भगवान विष्णु जी की महिमा का अद्भुत विवरण किया गया है। विष्णु पुराण के रचयिता पराशर ऋषि हैं,
+                        उन्होंने ये पुराण संस्कृत भाषा में लिखा।</p>
+                    <p><i class="fa-solid fa-share"></i> इस पुराण में देवी देवताओं की उत्पत्ति, भक्त प्रह्लाद की कथा,
+                        समुद्र मंथन, राज ऋषियों और देव ऋषियों के चरित्र के बारे में तार्किक ढंग से बताया गया है, साथ ही
+                        इसमें कृष्ण और रामकथा का भी उल्लेख है। इसके अलावा इसमें ब्रह्माण्ड की उत्पत्ति, गृह नक्षत्र,
+                        पृथ्वी, ज्योतिष, आश्रम व्यवस्था, वर्णव्यवस्था, गृहस्थ धर्म, वेद की शाखाओं, श्राद्ध विधि, विष्णु
+                        जी और लक्ष्मी माँ की महिमा आदि का भी वर्णन है।</p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample4" role="button"
+                    aria-expanded="false" aria-controls="collapseExample4">
+                    (4) वायु पुराण
+                </a>
+            </p>
+            <div class="collapse" id="collapseExample4">
+                <div class="card card-body  bg-light">
+                    <div class="puran-img d-flex justify-content-center">
+                        <img src="./IMG/vayu puran.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <hr>
+                    <p><i class="fa-solid fa-share"></i> वायु पुराण को शैव पुराण भी कहते है तथा इसके रचयिता है श्री वेद व्यास जी। 112 अध्याय, 2 खण्डों और 11000 श्लोकों वाले वायु पुराण में भुगोल, खगोल, युग, सृष्टिक्रम, तीर्थ, युग, श्राद्ध, पितरों, ऋषि वंश, राजवंश, संगीत शास्त्र, वेद शाखाओं, शिव भक्ति आदि का विस्तारपूर्वक विवरण दिया गया है।</p>
+                    <p><i class="fa-solid fa-share"></i> इसमें शिव जी की पूजन विधि और उनकी महिमा का विस्तृत वर्णन होने के कारण इसे शिव पुराण भी कहा जाता है। इस पुराण में भारत के बारे में भी लिखा गया है तथा नदी, पर्वतों, खण्डों, द्वीपों और लंका के बारे में भी लिखा गया है। इसके अलावा इसमें वरुण वंश, चंद्र वंश आदि का भी सुन्दर विवरण है।</p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample5" role="button"
+                    aria-expanded="false" aria-controls="collapseExample5">
+                    (5) भागवत पुराण
+                </a>
+            </p>
+            <div class="collapse" id="collapseExample5">
+                <div class="card card-body  bg-light">
+                    <div class="puran-img d-flex justify-content-center">
+                        <img src="./IMG/bhagvat puran.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <hr>
+                    <p><i class="fa-solid fa-share"></i> भागवत पुराण हिन्दू धर्म के 18 पुराणों में से पांचवा पुराण है और इसे भागवत और श्रीमद्भागवतम् के नाम से भी जाना जाता है। इसके रचयिता है वेद व्यास जी और उन्होंने इस पुराण को संस्कृत में लिखा। भागवत पुराण में 12 स्कंध  और 18000 श्लोक हैं। कहते हैं ये पुराण आत्मा की मुक्ति का मार्ग बताता है।</p>
+                    <p><i class="fa-solid fa-share"></i> इस पुराण का मुख्य बिंदु प्रेम और भाव भक्ति है। इसमें श्री कृष्ण को भगवान के रूप में बताया गया है और उनके जन्म, प्रेम और लीलाओं का विस्तारपूर्वक विवरण दिया गया है। इसमें पांडवों और कौरवों के बीच हो रहे महाभारत युद्ध और उसमें कृष्ण की भूमिका के बारे में भी बताया गया है। साथ ही श्रीकृष्ण ने  कैसे देह त्यागा और कैसे द्वारिका नगरी जलमग्न हुई और कैसे समस्त यदुवंशियो का नाश हुआ ये भी बताया गया है। </p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample5">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample6" role="button"
+                    aria-expanded="false" aria-controls="collapseExample6">
+                    (6) नारद पुराण 
+                </a>
+            </p>
+            <div class="collapse" id="collapseExample6">
+                <div class="card card-body  bg-light">
+                    <div class="puran-img d-flex justify-content-center">
+                        <img src="./IMG/narad puran.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <hr>
+                    <p><i class="fa-solid fa-share"></i> नारद पुराण को नारदीय पुराण भी कहते है। ऐसा माना जाता है कि ये वैष्णव पुराण स्वयं नारदमुनी ने कही, जिसे महर्षि वेद व्यास जी ने संस्कृत भाषा में लिखा था। इस पुराण में शिक्षा, ज्योतिष, व्याकरण, गणित और ईश्वर की उपासना कि विधि का विस्तारपूर्वक विवरण दिया गया है।</p>
+                    <p><i class="fa-solid fa-share"></i> इसमें 25000 श्लोक हैं और इसके दो भाग है। पहले भाग में ब्रह्माण्ड की उत्पत्ति और विनाश, मंत्रोच्चार, गणेश पूजा और अन्य पूजन विधियाँ, हवन और यज्ञ, महीनों में आने वाले व्रतों और विधियों के बारे में बताया गया है। दूसरे भाग में विष्णु जी के अवतारों से जुड़ी कथाओं का सुन्दर विवरण है तथा इसमें कलियुग में होने वाले परिवर्तनों के बारे में भी बताया गया है। </p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample6" aria-expanded="false" aria-controls="collapseExample6">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample7" role="button"
+                    aria-expanded="false" aria-controls="collapseExample7">
+                    (7) मार्कण्डेय पुराण
+                </a>
+            </p>
+            <div class="collapse" id="collapseExample7">
+                <div class="card card-body  bg-light">
+                    <div class="puran-img d-flex justify-content-center">
+                        <img src="./IMG/markendey puran.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <hr>
+                    <p><i class="fa-solid fa-share"></i> मार्कंडेय पुराण 18 पुराणों में से 7 वां पुराण है। इसमें 137 अध्याय और 9000 श्लोक है तथा ये पुराण बाकी पुराणों से छोटा है। महर्षि मार्कंडेय द्वारा कहे जाने के कारण इसे मार्कंडेय पुराण कहते है। ऐसा कहा जाता है कि ये पुराण दुर्गा चरित्र के विवरण के लिए जाना जाता है। इस पुराण में ऋषि ने मानव कल्याण के लिए भौतिक, सामाजिक, आध्यात्मिक, नैतिक विषयों के बारे में बताया है।</p>
+                    <p><i class="fa-solid fa-share"></i> इस पुराण में पक्षियों के पूर्व जन्म और देव इंद्र द्वारा मिले श्राप के कारण हुए रूप विकार के बारे में भी बताया गया है। इसमें द्रौपदी पुत्रों की कथा, बालभद्र कथा, हरिश्चंद्र की कथा, बक और आदि पक्षियों के बीच हुआ युद्ध, सूर्य देव के जन्म आदि का भी उल्लेख है।</p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample7" aria-expanded="false" aria-controls="collapseExample7">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample8" role="button"
+                    aria-expanded="false" aria-controls="collapseExample8">
+                    (8) अग्नि पुराण
+                </a>
+            </p>
+            <div class="collapse" id="collapseExample8">
+                <div class="card card-body  bg-light">
+                    <div class="puran-img d-flex justify-content-center">
+                        <img src="./IMG/agni puran.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <hr>
+                    <p><i class="fa-solid fa-share"></i> अग्नि पुराण 18 पुराणों में से 8वां पुराण है। इसके रचयिता वेद व्यास जी है और उन्होंने इसे संस्कृत भाषा में लिखा। अग्नि पुराण का नाम अग्नि पुराण इसलिए पड़ा क्योंकि इसे स्वयं अग्नि देव ने गुरु वशिष्ठ को सुनाया था। विस्तृत ज्ञान भण्डार और विविधता के कारण इसका विशेष स्थान है। इस पुराण में त्रिदेवों अर्थात ब्रह्म देव, विष्णु देव और शिव जी का वर्णन, सूर्य पूजन विधि का भी उल्लेख, महाभारत और रामायण का संक्षिप्त विवरण है। इसके साथ ही इसमें कूर्म और मत्स्य अवतार, दीक्षा विधि, सृष्टि का सृजन, वास्तु शास्त्र, पूजा, मंत्रों आदि का सुन्दर प्रतिपादन है।</p>
+                    <p><i class="fa-solid fa-share"></i> अग्नि पुराण में 383 अध्याय और 12  हजार श्लोक है। इस पुराण को विष्णु भगवान का बायां चरण भी कहते है। ये पुराण आकार में सबसे छोटा है, फिर भी इसमें सभी विद्याओं का समावेश है।</p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample8" aria-expanded="false" aria-controls="collapseExample8">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample9" role="button"
+                    aria-expanded="false" aria-controls="collapseExample9">
+                    (9) भविष्य पुराण
+                </a>
+            </p>
+            <div class="collapse" id="collapseExample9">
+                <div class="card card-body  bg-light">
+                    <div class="puran-img d-flex justify-content-center">
+                        <img src="./IMG/bhavishya puran.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <hr>
+                    <p><i class="fa-solid fa-share"></i> भविष्य पुराण 18 पुराणों में से 9 वां पुराण है तथा इसकी रचना महर्षि वेद व्यास जी ने संस्कृत भाषा में की थी। भविष्य पुराण में 14500 श्लोक हैं तथा इसमें धर्म, नीति, सदाचार, व्रत, दान, आयुर्वेद और ज्योतिष आदि का उल्लेख है। इसमें विक्रम बेताल के बारे में भी बताया गया है।</p>
+                    <p><i class="fa-solid fa-share"></i> जैसा कि नाम से ही प्रतीत होता है इसमें कई भविष्यवाणियाँ की गई जो सही साबित हुई। इसमें पृथ्वीराज चौहान, हर्षवर्धन महाराज, शिवाजी महाराज जैसे वीर हिन्दू राजाओं और मुहम्मद तुगलक, अलाउद्दीन, बाबर, तैमूरलंग, अकबर, रानी विक्टोरिया आदि के बारे में कहा गया है। इसकी शैली और विषयवस्तु के कारण ये पुराण बहुत महत्वपूर्ण प्रतीत होता है।</p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample9" aria-expanded="false" aria-controls="collapseExample9">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample10" role="button"
+                    aria-expanded="false" aria-controls="collapseExample10">
+                    (10) ब्रह्म वैवर्त पुराण
+                </a>
+            </p>
+            <div class="collapse" id="collapseExample10">
+                <div class="card card-body  bg-light">
+                    <div class="puran-img d-flex justify-content-center">
+                        <img src="./IMG/brahma vaivart puran.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <hr>
+                    <p><i class="fa-solid fa-share"></i> ब्रह्म वैवर्त पुराण 18 पुराणों में 10वां पुराण है तथा इसके रचयिता है वेद व्यास जी और इसे उन्होंने संस्कृत भाषा में लिखा गया। इसमें 218 अध्याय और  18000 श्लोक हैं। इसमें कई स्त्रोत और भक्ति पूर्ण आख्यान हैं। इस पुराण में यशोदानंदन को ही परब्रह्म माना गया है और ये भी माना गया है कि उनकी इच्छा अनुसार ही इस सृष्टि का निर्माण हुआ। ये भी बताया गया है कि कृष्ण से ही शिवजी, विष्णु जी, ब्रह्म देव और समस्त प्रकृति का जन्म हुआ।</p>
+                    <p><i class="fa-solid fa-share"></i> इस पुराण में धरती पर जीवों की उत्पत्ति कैसे हुई और कैसे सृष्टि के निर्माता ब्रह्मा जी ने धरती, जल और वायु में अनगिनत जीवों के जन्म और उनके लिए पालन पोषण की व्यवस्था की, इस बात का विस्तारपूर्वक विवरण दिया है।  इसमें श्री राम और श्री कृष्ण की लीलाओं, गणेश जी के जन्म कथा और उनकी लीला का भी वर्णन है।</p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample10" aria-expanded="false" aria-controls="collapseExample10">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample11" role="button"
+                    aria-expanded="false" aria-controls="collapseExample11">
+                    (11) लिङ्ग पुराण
+                </a>
+            </p>
+            <div class="collapse" id="collapseExample11">
+                <div class="card card-body  bg-light">
+                    <div class="puran-img d-flex justify-content-center">
+                        <img src="./IMG/ling puran.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <hr>
+                    <p><i class="fa-solid fa-share"></i> लिङ्ग पुराण 18 पुराणों में से 11वां पुराण है तथा इसके रचयिता वेद व्यास जी है।  इसके 11000 श्लोकों में शिव महिमा का सुंदर चित्रण किया गया है। इसमें भोलेनाथ के 28 अवतारों के बारे में बताया गया है तथा इसमें रुद्रावतार और लिंगोद्भव की कथा का भी विवरण है।</p>
+                    <p><i class="fa-solid fa-share"></i> इस पुराण में सृष्टि के कल्याण के लिए भोलेनाथ द्वारा ज्योर्तिलिंग के रूप में प्रकट होने की घटना का भी विवरण है। इसके अलावा इसमें उन व्रतों, शिव पूजन और यज्ञ का भी उल्लेख है जिसे करने से मुक्ति प्राप्त होती है।</p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample11" aria-expanded="false" aria-controls="collapseExample11">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample12" role="button"
+                    aria-expanded="false" aria-controls="collapseExample12">
+                    (12) वराह पुराण 
+                </a>
+            </p>
+            <div class="collapse" id="collapseExample12">
+                <div class="card card-body  bg-light">
+                    <div class="puran-img d-flex justify-content-center">
+                        <img src="./IMG/varah puran.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <hr>
+                    <p><i class="fa-solid fa-share"></i>  वराह पुराण 18 पुराणों में से 12 वां पुराण है और इसके रचयिता महर्षि वेद व्यास है। उन्होंने इसे संस्कृत भाषा में लिखा है तथा इस पुराण में 270 अध्याय और 10000 श्लोक हैं।  इस पुराण में विष्णु जी के वराह अवतार का उल्लेख है। ऐसा माना जाता है कि विष्णु जी धरती के उद्धार के लिए वराह रूप में अवतरित हुए थे, इसमें वराह कथा, व्रत, तीर्थ, दान, यज्ञ आदि का वर्णन है। इसमें श्री नारायण जी की पूजा विधि, माँ पार्वती और शिवजी की कथा, तीर्थों आदि को विस्तृत रूप से लिखा गया है।</p>
+                    <p><i class="fa-solid fa-share"></i> इसमें वराह देव के धर्मोपदेश और ऋषियों एवं संतों को दान-दक्षिणा देने से होने वाले पुण्य का भी उल्लेख है। इसमें गणपति चरित्र, शक्ति महिमा, कार्तिकेय चरित्र, त्रिशक्ति महात्म्य आदि का भी विवरण है तथा इसमें गोदान को बहुत महत्वपूर्ण बताया गया है और संस्कारों, अनुष्ठानों की विधियों के बारे में भी बताया गया है। </p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample12" aria-expanded="false" aria-controls="collapseExample12">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample13" role="button"
+                    aria-expanded="false" aria-controls="collapseExample13">
+                    (13) स्कन्द पुराण
+                </a>
+            </p>
+            <div class="collapse" id="collapseExample13">
+                <div class="card card-body  bg-light">
+                    <div class="puran-img d-flex justify-content-center">
+                        <img src="./IMG/skand puran.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <hr>
+                    <p><i class="fa-solid fa-share"></i>  स्कन्द पुराण 18 पुराणों में 13 वां पुराण है तथा इसकी रचना वेद व्यास जी ने संस्कृत भाषा में की थी। इस पुराण में शिव पुत्र कार्तिकेय, जिनका एक नाम स्कन्द भी है, के बारे में बताया गया है।</p>
+                    <p><i class="fa-solid fa-share"></i> इस पुराण के 81,100 श्लोकों में अयोध्या, यमुना, बद्रिकाश्रम, द्वारका, जगन्नाथपुरी, कांची, कन्याकुमारी, काशी, रामेश्वर आदि तीर्थों की महिमा का सुन्दर चित्रण है। इसमें नर्मदा, गंगा, सरस्वती नदियों के उद्गम के बारे में कथाएँ लिखी गयी है तथा इसमें हर महीने आने वाले व्रतों और उनकी कथाओं का भी विवरण है। इसमें धर्म, योग, सदाचार, भक्ति और ज्ञान के बारे में सुन्दर विवेचन किया गया है। इसमें कई महान संतों, शिव पार्वती विवाह, सतीत्व, तारकासुर वध और कार्तिकेय के जन्म की कथा का मनोरम वर्णन है।</p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample13" aria-expanded="false" aria-controls="collapseExample13">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample14" role="button"
+                    aria-expanded="false" aria-controls="collapseExample14">
+                    (14) वामन पुराण
+                </a>
+            </p>
+            <div class="collapse" id="collapseExample14">
+                <div class="card card-body  bg-light">
+                    <div class="puran-img d-flex justify-content-center">
+                        <img src="./IMG/vaman puran.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <hr>
+                    <p><i class="fa-solid fa-share"></i>  वामन पुराण 18 पुराणों में से 14 वां पुराण है तथा इसके रचयिता है वेद व्यास और इसे उन्होंने संस्कृत में लिखा। इस धार्मिक ग्रन्थ में भगवान विष्णु के वामन अवतार के बारे में लिखा गया है। इसमें कुल 10000 श्लोक हैं जिसमें शिव लिंग की पूजा विधि, शिव पार्वती विवाह, गणेश पूजन आदि के विषय में बताया गया है।</p>
+                    <p><i class="fa-solid fa-share"></i> इसके अलावा इसमें भगवती दुर्गा, नर-नारायण देव और उनके परम भक्त जैसे भक्त प्रह्लाद और श्री दामा के बारे में सुन्दर आख्यान हैं।  इसमें कई व्रतों, नियमों और स्त्रोतों का भी उल्लेख है। </p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample14" aria-expanded="false" aria-controls="collapseExample14">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample15" role="button"
+                    aria-expanded="false" aria-controls="collapseExample15">
+                    (15) कूर्म पुराण
+                </a>
+            </p>
+            <div class="collapse" id="collapseExample15">
+                <div class="card card-body  bg-light">
+                    <div class="puran-img d-flex justify-content-center">
+                        <img src="./IMG/kurma puran.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <hr>
+                    <p><i class="fa-solid fa-share"></i>  कूर्म पुराण 18 पुराणों में 15 वां पुराण है तथा इसके रचयिता वेदव्यास जी हैं तथा इसकी भाषा संस्कृत है। ये पुराण श्री हरी विष्णु द्वारा कथित है, इसमें पाप का नाश करने वाले व्रतों का उल्लेख है। इसमें कुल 18000 श्लोक हैं जिसे चार संहिताओं ब्राह्मी, भागवती, सौरी, वैष्णवी में बांटा गया था। इसमें विष्णु की दिव्य लीलाओं का खुबसूरत विवरण है।</p>
+                    <p><i class="fa-solid fa-share"></i> इसमें यद्ववंश, शिवलिंग की महिमा, वामन अवतार, वर्णाश्रम धर्म आदि का सुन्दर वर्णन है। इस पुराण में कालगणना, ब्रह्म देव की आयु, गंगा और पृथ्वी की उत्पत्ति आदि के बारे में भी विस्तार से उल्लेख किया गया है तथा इसमें प्रलय काल का भी वर्णन है। </p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample15" aria-expanded="false" aria-controls="collapseExample15">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample16" role="button"
+                    aria-expanded="false" aria-controls="collapseExample16">
+                    (16) मत्स्य पुराण
+                </a>
+            </p>
+            <div class="collapse" id="collapseExample16">
+                <div class="card card-body  bg-light">
+                    <div class="puran-img d-flex justify-content-center">
+                        <img src="./IMG/matsya puran.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <hr>
+                    <p><i class="fa-solid fa-share"></i>  मत्स्य पुराण 18 पुराणों में से 16वां पुराण है तथा इसके रचयिता वेदव्यास हैं। इस पुराण के 14000 श्लोकों में विष्णु जी के मत्स्य अवतार के बारे में बताया गया है। विष्णु जी ने अपने मत्स्य अवतार में सप्त ऋषियों और राजा वैवश्वत मनु को जो उपदेश दिए थे उसी पर ये पुराण आधारित है।</p>
+                    <p><i class="fa-solid fa-share"></i> इसमें कई व्रतों, दान, तीर्थों, यज्ञों की महिमा का उल्लेख है। इसमें मत्स्य व मनु के बीच हुए संवाद, जल प्रलय, तीर्थ यात्रा और राजधर्म, नर्मदा महात्म्य, काशी महात्म्य, प्रयाग महात्म्य, त्रिदेवों की महिमा और दान धर्म पर विशेष तौर पर लिखा गया है। इसमें नव गृह, तीनों युगों, तारकासुर वध कथा, नरसिंह अवतार, सावित्री कथा के बारे में भी उल्लेख है।</p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample16" aria-expanded="false" aria-controls="collapseExample16">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample17" role="button"
+                    aria-expanded="false" aria-controls="collapseExample17">
+                    (17)  गरुड़ पुराण
+                </a>
+            </p>
+            <div class="collapse" id="collapseExample17">
+                <div class="card card-body  bg-light">
+                    <div class="puran-img d-flex justify-content-center">
+                        <img src="./IMG/garud puran.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <hr>
+                    <p><i class="fa-solid fa-share"></i>  गरुड़ पुराण 18 पुराणों में से 17 वां पुराण है। इस पुराण के रचयिता है वेद व्यास जी और इसे उन्होंने संस्कृत में लिखा तथा ये पुराण विष्णु भक्ति पर आधारित है। सनातन धर्म में व्यक्ति की मृत्यु के बाद इस पुराण के पाठ को पढ़ने का प्रावधान है तथा ऐसा करने से आत्मा को मुक्ति मिलती है। ऐसा माना जाता है गरुड़ पुराण पढ़ने से आत्म ज्ञान होता है। इसके 19000 श्लोकों में भक्ति, वैराग्य, निष्काम, सदाचार, शुभ कर्मों, तीर्थ, दान आदि की महत्ता के बारे में वर्णन किया गया है।</p>
+                    <p><i class="fa-solid fa-share"></i> इसमें व्यक्ति की अंतिम यात्रा और उस दिन किए जाने वाले सभी कार्यों का विवरण है। मृत्यु के बाद क्या क्या होता है और मनुष्य की आत्मा की दशा क्या होती है सब वर्णित है। इसमें ज्योतिष, धर्म शास्त्र और योग का भी विवरण है। </p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample17" aria-expanded="false" aria-controls="collapseExample17">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+            <p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample18" role="button"
+                    aria-expanded="false" aria-controls="collapseExample18">
+                    (18) ब्रह्माण्ड पुराण
+                </a>
+            </p>
+            <div class="collapse" id="collapseExample18">
+                <div class="card card-body  bg-light">
+                    <div class="puran-img d-flex justify-content-center">
+                        <img src="./IMG/brahmad puran.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <hr>
+                    <p><i class="fa-solid fa-share"></i>  ब्राह्माण पुराण 18 पुराणों के क्रम में आखिरी पुराण है और इसकेरचयिता वेदव्यास है। इसके 3 भाग पूर्व, मध्य और उत्तर भाग और 12000 श्लोक है। ये आखिरी पुराण है लेकिन वैज्ञानिक दृष्टि से ये बहुत महत्वपूर्ण है। इस पुराण को खगोल शास्त्र भी कहते है।</p>
+                    <p><i class="fa-solid fa-share"></i> इसमें समस्त ब्राह्माण और ग्रहों का विस्तृत वर्णन है। इसमें चन्द्रवंशी और सूर्यवंशी राजाओं के बारे में बताया गया है। जब से सृष्टि का जन्म हुआ है तब से लेकर अब तक सात काल बीत चुके हैं और इन सभी सात कालों के बारे में ब्राह्माण पुराण में वर्णित है। इसमें परशुराम कथा भी लिखी गई है।</p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample18" aria-expanded="false" aria-controls="collapseExample18">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+    <!-- footer part -->
+    <div class="container-fluid mt-5">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+                <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Hunduism Site</span>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-2"><a class="text-body-secondary" href="#"><img src="IMG/twitter.png" height="25"></a>
+                </li>
+                <li class="ms-2"><a class="text-body-secondary" href="#"><img src="IMG/instagram.png" height="25"></a>
+                </li>
+                <li class="ms-2"><a class="text-body-secondary" href="#"><img src="IMG/facebook.png" height="25"></a>
+                </li>
+            </ul>
+        </footer>
+    </div>
+    </div>
+</body>
+
+</html>
