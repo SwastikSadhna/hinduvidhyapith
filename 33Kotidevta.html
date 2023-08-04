@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/33Kotidevta.css">
+    <link rel="stylesheet" href="css/loading.css">
+    <link rel="icon" type="image/x-icon" href="IMG/logo_icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="scripts/loading.js"></script>
+    <title>Home | hinduism.com</title>
+</head>
+
+<body style="display: flex;" class="container-fluid row">
+
+    <!-- loading -->
+    <div class="loading">
+        <img src="IMG/loading.gif" height="50px">
+    </div>
+
+    <!-- slidebar -->
+    <div class="d-none d-md-block d-flex flex-column flex-shrink-0 p-3 text-bg-dark position-fixed"
+        style="width: 260px; height:100vh">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <img src="IMG/Om img.jpeg" height="35px" width="35px">
+            <span class="fs-4 m-lg-1">सनातन को जानिए</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="./4Veds.html" class="nav-link text-white">
+                    <!-- <img src="IMG/morning.png" height="28px"> -->
+                    4 वेद
+                </a>
+            </li>
+            <li>
+                <a href="./18puran.html" class="nav-link text-white">
+                    <!-- <img src="IMG/eating.png" height="28px"> -->
+                    18 पुराण
+                </a>
+            </li>
+            <li>
+                <a href="./33Kotidevta.html" class="nav-link active" aria-current="page">
+                    <!-- <img src="IMG/night.png" height="28px"> -->
+                    33 कोटि देवता
+                </a>
+            </li>
+            <li>
+                <a href="./Know_sanatan(4).html" class="nav-link text-white">
+                    <!-- <img src="IMG/study.png" height="28px"> -->
+                    108 उपनिषद
+                </a>
+            </li>
+            <li>
+                <a href="./Know_sanatan(5).html" class="nav-link text-white">
+                    <!-- <img src="IMG/more.png" height="28px"> -->
+                    अन्य बातें
+                </a>
+            </li>
+            <hr class="mt-5">
+            <li>
+                <a href="index.html" class="nav-link text-white">
+                    <img src="IMG/back.png" height="28px">
+                    Back to Home
+                </a>
+            </li>
+        </ul>
+    </div>&nbsp;
+
+    <!-- toggle button -->
+    <div class="container row d-md-none">
+        <h2 class="col" style="margin: 10px;">Hinduism</h2>
+        <a class="col-1" data-bs-toggle="offcanvas" href="#offcanvasWithBothOptions" role="button"
+            aria-controls="offcanvasWithBothOptionsLabel">
+            <img id="lines" src="IMG/menu.png" height="35px" style="margin: 10px 0px;">
+        </a>
+    </div>
+
+    <!-- popup slider -->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel" data-bs-theme="dark" style="overflow: scroll;">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Shlokas</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="./4Veds.html" class="nav-link text-white" aria-current="page">
+                    <!-- <img src="IMG/morning.png" height="25px"> -->
+                    4 वेद
+                </a>
+            </li>
+            <li>
+                <a href="./18puran.html" class="nav-link text-white">
+                    <!-- <img src="IMG/eating.png" height="25px"> -->
+                    18 पुराण
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link active">
+                    <!-- <img src="IMG/night.png" height="25px"> -->
+                    33 कोटि देवता
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <!-- <img src="IMG/study.png" height="25px"> -->
+                    108 उपनिषद
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link text-white">
+                    <!-- <img src="IMG/more.png" height="25px"> -->
+                    अन्य बातें
+                </a>
+            </li>
+            <hr class="mt-5">
+            <li>
+                <a href="index.html" class="nav-link text-white">
+                    <img src="IMG/back.png" height="25px">
+                    Back to Home
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="col container" style="margin-top: 10px; " id="content-part">
+        <h3><b>हिंदू धर्म में 33 करोड़ या 33 कोटि देवी देवता कौन-कौन से है? </b></h3>
+        <hr>
+        <p><i class="fa-solid fa-share"></i> हिंदू धर्म में 33 करोड़ या 33 कोटि देवी देवता कौन-कौन से है? हमारे
+            धर्मग्रंथो मे '33 कोटि' देवताओ का वर्णन है, जहाँ कोटि शब्द को लेकर काफी भ्रामक प्रचार है। अधिकतर हम लोग कोटि
+            को करोड़ से ही परिभाषित करते है।</p>
+        <p><i class="fa-solid fa-share"></i> कोटि के प्रायः दो अर्थ है एक “प्रकार” और दूसरा “करोड़” और शायद इसीलिए हम '33
+            कोटि' देवतओं को '33 करोड़' देवता कहते है।</p>
+        <p><i class="fa-solid fa-share"></i> इन '33 कोटि' देवताओं को मुख्यत: 4 श्रेणियों मे विभाजित किया गया है।</p>
+        <div class="d-flex justify-content-center">
+            <img src="./IMG/33 koti devta.webp" class="h-50 img-fluid" alt="...">
+        </div>
+        <hr>    
+
+        <!-- 33 koti devta explanation section -->
+        <div class="container ">
+            <p>
+                <a class="btn btn-primary w-50 " data-bs-toggle="collapse" href="#collapseExample1" role="button"
+                    aria-expanded="false" aria-controls="collapseExample1">
+                    (1) 8 वसु
+                </a>
+            </p>
+            <div class="collapse" id="collapseExample1">
+                <div class="card card-body">
+                    <div class="puran-img d-flex justify-content-center">
+                        <img src="./IMG/8 vasu.png" class="img-fluid h-25 mb-3" alt="...">
+                    </div>
+                    <p><i class="fa-solid fa-share"></i> वसु को शास्त्रों में इस प्रकार परिभाषित किया है अर्थात जहाँ कोई
+                        वास
+                        करता हो जैसे जीवात्मा हमारे शरीर मे निवास करती है। हमारा शरीर इन 8 वसुओं का ही बना होता है ये इस
+                        प्रकार है</p>
+                    <p><b>(1) अपस</b> - इसका अर्थ होता है जल</p>
+                    <p><b>(2) ध्रव</b> - ध्रुव तारा</p>
+                    <p><b>(3) सोम</b> - इसका अर्थ है चन्द्रमा</p>
+                    <p><b>(4) धरा</b> - इसका अर्थ है पृथ्वी</p>
+                    <p><b>(5) अनिल</b> - इसका अर्थ है वायु</p>
+                    <p><b>(6) अनल</b> - इसका अर्थ है अग्नि</p>
+                    <p><b>(7) प्रत्यूष</b> - इसका अर्थ है अंतरिक्ष</p>
+                    <p><b>(8) प्रभाष</b> - इसका अर्थ है अरुणोदय या सूर्योदय</p>
+                    <button class="btn btn-primary w-50 " type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+                        close
+                    </button>
+                </div>
+            </div><hr>
+
+            <p>
+                <a class="btn btn-primary w-50 " data-bs-toggle="collapse" href="#collapseExample2" role="button"
+                    aria-expanded="false" aria-controls="collapseExample2">
+                    (2) 12 आदित्य
+                </a>
+            </p>
+            <div class="collapse" id="collapseExample2">
+                <div class="card card-body">
+                    <div class="puran-img d-flex justify-content-center">
+                        <img src="./IMG/12 aditya.jpg" class="img-fluid mb-3 " alt="...">
+                    </div>
+                    <p><i class="fa-solid fa-share"></i> आदित्य का अर्थ यहाँ भगवान सूर्य से है। सूर्य भगवान प्रत्येक
+                        राशि मे एक माह के लिए विचरण करते है फिर दूसरी राशि मे प्रवेश करते है। इस प्रकार 12 माह मे 12
+                        राषियो मे चक्कर लगाते है।</p>
+
+                    <p><i class="fa-solid fa-share"></i> इसी आधार पर हमारा हिन्दू कलैण्डर बनाया जाता है इसलिए इन्हे 12
+                        प्रकार से व्यक्त किया जाता है इन्हे हमारी आयु हरने वाला भी कहा जाता है क्योकि जैसे - जैसे दिन
+                        बढ़ते है। हमारी आयु भी कम होती जाती है ये इस प्रकार है-</p>
+                    <p><b>अंशुमान -</b> यह प्राण वायु का प्रतिनिधित्व करते है।</p>
+                    <p><b>अर्यमन -</b> यह प्रातः और रात्रि के चक्र को दर्शाते है।</p>
+                    <p><b>इंद्र -</b> यह देवो के राजा है समस्त इन्द्रियों पर इन्ही का अधिकार है।</p>
+                    <p><b>त्वष्टा -</b> यह वनस्पति और औषधियों का प्रतिनिधत्व करते है।</p>
+                    <p><b>धाता -</b> यह प्रजापति के रूप है इन्हे सृष्टिकर्ता भी कहाँ जाता है।</p>
+                    <p><b>पर्जन्य -</b> यह मेघों का प्रतिनिधित्व करते है जो वर्षा के कारक है।</p>
+                    <p><b>पूषा -</b> यह अन्न का प्रतीक है तथा उसमे उपस्थित ऊर्जा, स्वाद और रस को दर्शाते है।</p>
+                    <p><b>भग -</b> यह शरीर में चेतना, ऊर्जा शक्ति, काम शक्ति तथा जीवंतता की अभिव्यक्ति को दर्शाते है।
+                    </p>
+                    <p><b>मित्र -</b> यह सृष्टि के विकास के कर्म को दर्शाते है।</p>
+                    <p><b>वरुण -</b> यह जल का प्रतिनिधित्व करते है तथा भाग्य को भी दर्शाते है।</p>
+                    <p><b>विवस्वान -</b> यह तेज और ऊर्जा का प्रतिनिधित्व करते है।</p>
+                    <p><b>विष्णु -</b> यह ब्रह्माण्डीय कानून और उसके संचालन का प्रतिनिधत्व करते है।</p>
+                    <button class="btn btn-primary w-50 " type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+                        close
+                    </button>
+                </div>
+            </div><hr>
+
+            <p>
+                <a class="btn btn-primary w-50 " data-bs-toggle="collapse" href="#collapseExample3" role="button"
+                    aria-expanded="false" aria-controls="collapseExample3">
+                    (3) 11 रूद्र
+                </a>
+            </p>
+            <div class="collapse" id="collapseExample3">
+                <div class="card card-body">
+                    <div class="puran-img d-flex justify-content-center">
+                        <!-- <img src="./IMG/11-rudra.jpeg" class="img-fluid  mb-3 h-50" alt="..."> -->
+                    </div>
+                    <p><i class="fa-solid fa-share"></i> यहाँ पर ये रूद्र शरीर के अव्यव है। जब तक ये शरीर मे विध्यमान
+                        है, हमारा शरीर गतिमान है। किन्तु जब ये अव्यव शरीर से प्लायन कर जाते है तब येही रूद्र अर्थात रोदन
+                        कराने वाले होते है। जब हमारा शरीर मृत हो जाता है तब हमारे सगेसंबंधी हमारी मृत देह पर रोदन करते
+                        है।</p>
+                    <p><i class="fa-solid fa-share"></i> इसीलिए इन्हे रूद्र अर्थात रुलाने वाला कहा गया है इनमे प्रथम
+                        पांच ” प्राण ” और दूसरे पांच ” उपप्राण ” है 11 वा रूद्र ही जीवात्मा है। ये सभी शरीर के अलग-अलग
+                        भागों में स्थित होते हैं तथा अलग-अलग अंगों व क्रियाओं को संचालित करते हैं। ये इस प्रकार है -</p>
+                    <p><b>(1) प्राण </b> प्राण गले से लेकर हृदय तक के अंगों एवं स्वर तंत्र, श्वसन तंत्र, भोजन नली, श्वास
+                        नली, फेफड़े-हृदय आदि को स्वस्थ रखता है। यह हृदय में स्थित होता है।</p>
+                    <p><b>(2) अपान </b> अपान का कार्य मल-मूत्र त्याग, प्रसव आदि क्रियाओं को संचालित करता है। यह गुदा और
+                        मूत्रेन्द्रियों के बीच स्थित होता है।</p>
+                    <p><b>(3) व्यान </b> यह शरीर में रक्त संचार करता है। इसका स्थान मष्तिष्क का मध्य भाग है।</p>
+                    <p><b>(4) उदान </b> उदान गले के ऊपर के अंगों मुंह, दांत, नाक, आंख, कान, माथा, मस्तिष्क आदि का संचालन
+                        करता है। उदान विविध वस्तुएँ बाहर से शरीर के भीतर ग्रहण करता है। यह कंठ में स्थित होता है।</p>
+                    <p><b>(5) समान </b> इसका स्थान नाभि में होता है, पाचक रसों का उत्पादन और उनका स्तर उपयुक्त बनाये
+                        रहना इसी का काम है।</p>
+                    <p><b>(6) नाग </b> नाग का कार्य वायु सञ्चार, डकार, हिचकी, गुदा वायु का उत्तसर्जन करना। यह “प्राण” का
+                        “उपप्राण” है तथा यह भी हृदय में स्थित होता है।</p>
+                    <p><b>(7) कूर्म्म </b> कूर्म से पलक मारने और बन्द होने की क्रिया होती है। यह “अपान” का “उपप्राण” है
+                        तथा यह भी गुदा और मूत्रेन्द्रियों के बीच स्थित होता है।</p>
+                    <p><b>(8) कृकल </b> कृकल का कार्य भूख-प्यास को संचारित करना है। यह “समान” का “उपप्राण” है यह भी नाभि
+                        में स्थित होता है।</p>
+                    <p><b>(9) देवदत्त </b> यह छींक आने और अंगड़ाई आने की क्रिया है। यह “उदान” का “उपप्राण” है इसका स्थान
+                        भी कंठ में होता है।</p>
+                    <p><b>(10) धनञ्जय </b> धनञ्जय जीवित अवस्था में शरीर का पोषण करता है और मरने पर देह सड़ा-गला कर शीघ्र
+                        नष्ट करने का प्रबन्ध करता है। इसका प्रधान केन्द्र मस्तिष्क का मध्य भाग है। यह “व्यान” का
+                        “उपप्राण” है इसका स्थान भी मष्तिष्क का मध्य भाग होता है।</p>
+                    <p><b>(11) जीवात्मा </b> इसके निकलते ही शरीर क्रिया करना बंद कर देता है। </p>
+                    <button class="btn btn-primary w-50 " type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">
+                        close
+                    </button>
+                </div>
+            </div><hr>
+
+            <p>
+                <a class="btn btn-primary w-50 " data-bs-toggle="collapse" href="#collapseExample4" role="button"
+                    aria-expanded="false" aria-controls="collapseExample4">
+                    (4) 2 अश्वनीकुमार
+                </a>
+            </p>
+            <div class="collapse" id="collapseExample4">
+                <div class="card card-body">
+                    <div class="puran-img d-flex justify-content-center">
+                        <img src="./IMG/ashwini kumar.jpeg" class="img-fluid h-50 mb-3" alt="...">
+                    </div>
+                    <p><i class="fa-solid fa-share"></i>अश्वनीकुमार त्वष्टा की पुत्री और सूर्य देव की संतान है जिन्हे
+                        आयूर्वेद का आदि आचार्य माना जाता है इनके नाम इस प्रकार है -</p>
+                    <p><b>(1) नासत्य</b></p>
+                    <p><b>(2) दस्त्र</b></p>
+                    <button class="btn btn-primary w-50 " type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">
+                        close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div><hr>
+
+
+    <!-- footer part -->
+    <div class="container-fluid mt-5">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+                <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Hunduism Site</span>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-2"><a class="text-body-secondary" href="#"><img src="IMG/twitter.png" height="25"></a>
+                </li>
+                <li class="ms-2"><a class="text-body-secondary" href="#"><img src="IMG/instagram.png" height="25"></a>
+                </li>
+                <li class="ms-2"><a class="text-body-secondary" href="#"><img src="IMG/facebook.png" height="25"></a>
+                </li>
+            </ul>
+        </footer>
+    </div>
+</body>
+
+</html>

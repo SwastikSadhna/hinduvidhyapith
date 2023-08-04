@@ -1,0 +1,13 @@
+#content-part{
+    margin-left: 18%;
+}
+
+/* Media Query Starts From Here */
+@media (min-width:200px) and (max-width:500px) {
+    #content-part{
+        margin-left: 1%;
+    }
+    .card img{
+        height: 180px;
+    }
+}
