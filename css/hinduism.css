@@ -58,6 +58,8 @@
   animation-iteration-count: infinite;
 }
 
+
+/* Media Qury Start's From Here */
 @keyframes example {
   0%   {top:-2px;}
   50%  {top:2px;}
