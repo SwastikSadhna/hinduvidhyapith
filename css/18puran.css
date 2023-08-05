@@ -12,10 +12,6 @@
 
 
 @media (min-width:200px) and (max-width:500px) {
-    #shlokas_imgs {
-        margin-left: 0%;
-        width: 60%;
-    }
     #content-part{
         margin-left: 1%;
     }
@@ -23,3 +19,18 @@
         height: 180px;
     }
 }
+
+@media (min-width:650px) {
+    #content-part{
+        padding: 0%;
+    }
+    .sidebar{
+        display: none;
+    }
+}
+
+@media (min-width:700px) and (max-width:1574px) {
+    #content-part{
+        margin-left: 18rem ;
+    } 
+} 
