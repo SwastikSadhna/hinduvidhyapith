@@ -18,8 +18,12 @@ const orbit = new OrbitControls(camera, renderer.domElement);
 
 // camera.position.set(-90,140,140);
 // camera.position.set(0,120,180);
-camera.position.set(0,0,200)
+camera.position.set(0,0,200);
 camera.updateProjectionMatrix();
+
+orbit.maxDistance = 200;
+orbit.minDistance = 150;
+
 
 renderer.setSize(window.innerWidth,window.innerHeight);
 document.body.appendChild(renderer.domElement);
