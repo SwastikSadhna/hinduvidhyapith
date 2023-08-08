@@ -1,4 +1,4 @@
-/* *{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,14 +6,35 @@
 html,body{
     height: 100%;
     width: 100%;
-} */
+}
 #content-part{
     margin-left: 260px;
 }
+
+@media (max-width: 767px) {
+    #content-part{
+        margin-left: 0px;
+    }
+}
+
 .size{
     font-size: 22px;
     font-weight: 600;
 }
 #step-image{
     margin-bottom: 100px;
+}
+
+.card-img-top {
+    width: 90%;
+}
+
+#card-container {
+    width: 55%;
+}
+
+@media(max-width: 767px) {
+    #card-container {
+        width: 100%;
+    }
 }
