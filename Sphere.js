@@ -9,7 +9,7 @@ window.addEventListener("resize",function(){
     renderer.setSize(window.innerWidth,window.innerHeight);
 })
 
-const avatars = 8;
+const avatars = 10;
 const radius = avatars*10;
 
 const avatarImgs = [
@@ -109,11 +109,22 @@ for(let i=0; i<avatars; i++){
     earth.add(avatar.obj);
 }
 
+const bg = [
+    './IMG/Vishnu-avatar/temp-bg.jpg',
+    './earth.jpg',
+    './IMG/Vishnu-avatar/temp-bg.jpg',
+    './IMG/Vishnu-avatar/temp-bg.jpg',
+    './IMG/Vishnu-avatar/temp-bg.jpg',
+    './IMG/Vishnu-avatar/temp-bg.jpg'
+];
+
+// const newBg = new THREE.CubeTextureLoader().load(bg);
+// scene.background = newBg;
 
 renderer.render(scene, camera);
 
 function animation(time){
-    earth.rotation.y = time/3000;
+    earth.rotation.y = time/4000;
 
     renderer.render(scene, camera);
     orbit.update();
