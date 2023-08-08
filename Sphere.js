@@ -9,6 +9,9 @@ window.addEventListener("resize",function(){
     renderer.setSize(window.innerWidth,window.innerHeight);
 })
 
+const avatars = 8;
+const radius = avatars*10;
+
 const avatarImgs = [
     './Matsya-avatar.png',
     './Kurma-avatar.png',
@@ -91,17 +94,17 @@ const earth = new THREE.Mesh(earthGeometry,earthMaterial);
 earth.position.set(0,0,0)
 scene.add(earth);
 
-for(let i=0; i<10; i++){
+for(let i=0; i<avatars; i++){
     const avatar = new AvatarCard(avatarImgs[i],70,0,0);
 
     const spherical = new THREE.Spherical();
-    spherical.radius = 90;
+    spherical.radius = radius;
     spherical.phi = Math.PI/2;
-    spherical.theta = 2 * Math.PI * i/10;
+    spherical.theta = 2 * Math.PI * i/avatars;
     const cartesian = new THREE.Vector3();
     cartesian.setFromSpherical(spherical);
     avatar.obj.position.copy(cartesian);
-    avatar.obj.rotation.y += (i)*10;
+    avatar.obj.rotation.y = spherical.theta;
 
     earth.add(avatar.obj);
 }
