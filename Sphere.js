@@ -9,6 +9,7 @@ window.addEventListener("resize",function(){
     renderer.setSize(window.innerWidth,window.innerHeight);
 })
 
+
 class AvatarCard{
     static height=35;
     static width=26;
