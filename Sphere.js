@@ -9,7 +9,34 @@ window.addEventListener("resize",function(){
     renderer.setSize(window.innerWidth,window.innerHeight);
 })
 
+class AvatarCard{
+    static height=35;
+    static width=26;
+    texture;
+    x;
+    y;
+    z;
+    geometry;
+    img;
+    material;
+    obj;
 
+    constructor(img,x,y,z){
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        
+        this.geometry = new THREE.BoxGeometry(AvatarCard.width,AvatarCard.height);
+        this.texture = new THREE.TextureLoader().load(img);
+        this.material = new THREE.MeshStandardMaterial({map:this.texture,transparent:true});
+        this.obj = new THREE.Mesh(this.geometry,this.material)
+        this.obj.position.set(this.x,this.y,this.z);
+    }
+
+     add(){
+        earth.add(this.obj);
+    }
+}
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(60,window.innerWidth/window.innerHeight,0.1,1000);
@@ -51,74 +78,46 @@ const earth = new THREE.Mesh(earthGeometry,earthMaterial);
 earth.position.set(0,0,0)
 scene.add(earth);
 
-// Avatars
-const avatarGeometry = new THREE.BoxGeometry(26,35);
-const avatarTexture = new THREE.TextureLoader().load('./IMG/Vishnu-avatar/Matsya-avatar.png');
-const avatarMaterial = new THREE.MeshStandardMaterial({map:avatarTexture,transparent:true});
-const avatar = new THREE.Mesh(avatarGeometry,avatarMaterial)
-avatar.position.set(70,0,0);
 
-const avatar2Geometry = new THREE.BoxGeometry(26,35)
-const avatar2Texture = new THREE.TextureLoader().load('./IMG/Vishnu-avatar/Kurma-avatar.png');
-const avatar2Material = new THREE.MeshStandardMaterial({map:avatar2Texture,transparent:true});
-const avatar2 = new THREE.Mesh(avatar2Geometry,avatar2Material)
-avatar2.position.set(45,0,-45);
+const avatar1 = new AvatarCard('./IMG/Vishnu-avatar/Matsya-avatar.png',70,0,0);
+avatar1.add();
 
 
-const avatar3Geometry = new THREE.BoxGeometry(26,35)
-const avatar3Texture = new THREE.TextureLoader().load('./IMG/Vishnu-avatar/Varaha-avatar.png');
-const avatar3Material = new THREE.MeshStandardMaterial({map:avatar3Texture,transparent:true });
-const avatar3 = new THREE.Mesh(avatar3Geometry,avatar3Material)
-avatar3.position.set(-45,0,45)
-
-const avatar4Geometry = new THREE.BoxGeometry(26,35)
-const avatar4Texture = new THREE.TextureLoader().load('./IMG/Vishnu-avatar/Narasimha-avatar.png');
-const avatar4Material = new THREE.MeshStandardMaterial({map:avatar4Texture,transparent:true});
-const avatar4 = new THREE.Mesh(avatar4Geometry,avatar4Material)
-avatar4.position.set(45,0,45)
-
-const avatar5Geometry = new THREE.BoxGeometry(26,35)
-const avatar5Texture = new THREE.TextureLoader().load('./IMG/Vishnu-avatar/Vamana-avatar.png');
-const avatar5Material = new THREE.MeshStandardMaterial({map:avatar5Texture,transparent:true});
-const avatar5 = new THREE.Mesh(avatar5Geometry,avatar5Material)
-avatar5.position.set(-70,0,0)
-
-const avatar6Geometry = new THREE.BoxGeometry(26,35)
-const avatar6Texture = new THREE.TextureLoader().load('./IMG/Vishnu-avatar/Parsuram-avatar.png');
-const avatar6Material = new THREE.MeshStandardMaterial({map:avatar6Texture,transparent:true});
-const avatar6 = new THREE.Mesh(avatar6Geometry,avatar6Material)
-avatar6.position.set(-45,0,-45)
-
-const avatar7Geometry = new THREE.BoxGeometry(26,35)
-const avatar7Texture = new THREE.TextureLoader().load('./IMG/Vishnu-avatar/Ram-avatar.png');
-const avatar7Material = new THREE.MeshStandardMaterial({map:avatar7Texture,transparent:true});
-const avatar7 = new THREE.Mesh(avatar7Geometry,avatar7Material)
-avatar7.position.set(0,0,-70)
+const avatar2 = new AvatarCard('./IMG/Vishnu-avatar/Kurma-avatar.png',45,0,-45);
+avatar2.add();
 
 
+const avatar3 = new AvatarCard('./IMG/Vishnu-avatar/Varaha-avatar.png',-45,0,45);
+avatar3.add();
 
 
-earth.add(avatar);
-earth.add(avatar2);
-earth.add(avatar3);
-earth.add(avatar4);
-earth.add(avatar5);
-earth.add(avatar6);
-earth.add(avatar7);
+const avatar4 = new AvatarCard('./IMG/Vishnu-avatar/Narasimha-avatar.png',45,0,45);
+avatar4.add();
 
 
-// Sphere.rotation.y = 45;
+const avatar5 = new AvatarCard('./IMG/Vishnu-avatar/Vamana-avatar.png',-70,0,0);
+avatar5.add();
+
+
+const avatar6 = new AvatarCard('./IMG/Vishnu-avatar/Parsuram-avatar.png',-45,0,-45);
+avatar6.add();
+
+
+const avatar7 = new AvatarCard('./IMG/Vishnu-avatar/Ram-avatar.png',0,0,-70);
+avatar7.add();
+
+
 renderer.render(scene, camera);
 
 function animation(time){
     earth.rotation.y = time/3000;
-    avatar.rotation.y = time/3000;
-    avatar2.rotation.y = time/3000;
-    avatar3.rotation.y = time/3000;
-    avatar4.rotation.y = time/3000;
-    avatar5.rotation.y = time/3000;
-    avatar6.rotation.y = time/3000;
-    avatar7.rotation.y = time/3000;
+    avatar1.obj.rotation.y = time/3000;
+    avatar2.obj.rotation.y = time/3000;
+    avatar3.obj.rotation.y = time/3000;
+    avatar4.obj.rotation.y = time/3000;
+    avatar5.obj.rotation.y = time/3000;
+    avatar6.obj.rotation.y = time/3000;
+    avatar7.obj.rotation.y = time/3000;
 
     renderer.render(scene, camera);
     orbit.update();
