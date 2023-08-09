@@ -1,6 +1,16 @@
-#content-part{
-    margin-left: 18%;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+html , body{
+    height: 100%;
+    width: 100%;
+    /* background: url(../IMG/radhakrishna.gif);
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+
 
 .list-bhajan a{
     text-decoration: none;
@@ -30,3 +40,18 @@
         margin-left: 18rem ;
     } 
 } 
+
+@media (max-width:950px) {
+    .card{
+        margin-left: auto;
+    }
+}
+
+@media (max-width:1200px) {
+    .carousel-card .card{
+        display: none;
+    }
+    .carousel-card h4{
+        display: none;
+    }
+}
