@@ -115,22 +115,22 @@ for(let i=0; i<avatars; i++){
     earth.add(avatar.obj);
 }
 
-const bg = [
-    './nirmal/left.jpg',    // left
-    './nirmal/right.jpg',    // left
-    './nirmal/up.jpg',    // left
-    './nirmal/floor.png',    // left
-    './nirmal/back.jpg',    // left
-    './nirmal/front.jpg'  // left
- //   './rightside temple (1).jpg', // right
-   // './upside temple.jpg', // top
-    //'./floorside temple.png', //bottom
-    //'./backside temple.jpg',    // back
-    //'./frontside temple.jpg'    // front
-];
+// const bg = [
+//     './nirmal/left.jpg',    // left
+//     './nirmal/right.jpg',    // left
+//     './nirmal/up.jpg',    // left
+//     './nirmal/floor.png',    // left
+//     './nirmal/back.jpg',    // left
+//     './nirmal/front.jpg'  // left
+//  //   './rightside temple (1).jpg', // right
+//    // './upside temple.jpg', // top
+//     //'./floorside temple.png', //bottom
+//     //'./backside temple.jpg',    // back
+//     //'./frontside temple.jpg'    // front
+// ];
 
-const newBg = new THREE.CubeTextureLoader(loaderManager).load(bg);
-scene.background = newBg;
+// const newBg = new THREE.CubeTextureLoader(loaderManager).load(bg);
+scene.background = new THREE.TextureLoader().load('background.jpg');
 
 renderer.render(scene, camera);
 
