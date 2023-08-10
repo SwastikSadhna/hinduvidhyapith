@@ -1,16 +1,18 @@
 import * as THREE from "three";
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-// RESIZE
 
+// RESIZE DETECTOR
 window.addEventListener("resize",function(){
     camera.aspect = window.innerWidth/window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth,window.innerHeight);
 })
 
+// IMP PARAMETERS
 const avatars = 10;
 const radius = avatars*10;
+
 
 const avatarImgs = [
     './Matsya-avatar.png',
@@ -25,6 +27,7 @@ const avatarImgs = [
     './Kalki-avatar.png'
 ]
 
+// AVATAR CARD CLASSS
 class AvatarCard{
     static height=50; // 35, 26 , earth : 24
     static width=43;
@@ -47,6 +50,7 @@ class AvatarCard{
         this.material = new THREE.MeshStandardMaterial({map:this.texture,transparent:true});
         this.obj = new THREE.Mesh(this.geometry,this.material)
         this.obj.position.set(this.x,this.y,this.z);
+        this.obj.type = "avatar"
     }
 
      add(){
@@ -54,11 +58,18 @@ class AvatarCard{
     }
 }
 
+
+
+// ALL VARIABLES
+let stopAnimation = true;
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(90,window.innerWidth/window.innerHeight,0.1,1000);
 const renderer = new THREE.WebGLRenderer({antialias:true});
 const orbit = new OrbitControls(camera, renderer.domElement);
 const progress = document.querySelector("#progress");
+// AxesHelper
+// const ah = new THREE.AxesHelper(200);
+// scene.add(ah)
 const loader = new THREE.LoadingManager(
     ()=>{
         console.log("Jay Shree Ram")
@@ -91,10 +102,6 @@ renderer.setSize(window.innerWidth,window.innerHeight);
 document.body.appendChild(renderer.domElement);
 scene.add(orbit);
 
-// Axes Helper
-const axesHelper = new THREE.AxesHelper(100);
-// scene.add(axesHelper);
-
 // Setting up background
 
 const background = new THREE.TextureLoader(loader).load('background.jpg');
@@ -105,8 +112,7 @@ const light = new THREE.AmbientLight(0xffffff,2);
 light.position.set(0,0,0)
 scene.add(light)
 
-// Sphere Geometry
-
+// Sphere Geometry - EARTH
 const earthGeometry = new THREE.SphereGeometry(40);
 const earthTexture = new THREE.TextureLoader(loader).load('./earth.jpg');
 const earthMaterial = new THREE.MeshStandardMaterial( {map:earthTexture,transparent:true});
@@ -114,6 +120,7 @@ const earth = new THREE.Mesh(earthGeometry,earthMaterial);
 earth.position.set(0,0,0)
 scene.add(earth);
 
+// AVATAR GENERATOR
 for(let i=0; i<avatars; i++){
     const avatar = new AvatarCard(avatarImgs[i],70,0,0);
 
@@ -131,15 +138,56 @@ for(let i=0; i<avatars; i++){
 
 renderer.render(scene, camera);
 
+// ANIMATOR FUNCTION
+
 function animation(time){
-    earth.rotation.y = time/4000;
+    // earth.rotation.y = time/4000;
 
     renderer.render(scene, camera);
     orbit.update();
+    if(stopAnimation)
     renderer.setAnimationLoop(animation);
+    else
+    renderer.setAnimationLoop(null);
+
+
 }
 
 animation();
+
+// display avatar
+const raycaster = new THREE.Raycaster();
+const pointer = new THREE.Vector2();
+
+window.addEventListener("click",AvatarSelected)
+
+function AvatarSelected(event){
+    pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
+    pointer.y = - (event.clientY / window.innerHeight) * 2 + 1;
+    clickRender();
+}
+
+function clickRender() {
+
+	// update the picking ray with the camera and pointer position
+	raycaster.setFromCamera( pointer, camera );
+
+	// calculate objects intersecting the picking ray
+	const intersects = raycaster.intersectObjects( scene.children );
+
+    console.log(intersects[0])
+
+    if(intersects.length > 0 && intersects[0].object.type == "avatar")
+    {
+        stopAnimation = false;
+        const card = intersects[0].object;
+
+        card.position.z = camera.position.z
+        renderer.render( scene, camera );
+    }
+
+}
+
 
 // const bg = [
     // './nirmal/left.jpg',    // left
