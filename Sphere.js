@@ -26,8 +26,8 @@ const avatarImgs = [
 ]
 
 class AvatarCard{
-    static height=40; // 35, 26 , earth : 24
-    static width=30;
+    static height=50; // 35, 26 , earth : 24
+    static width=43;
     texture;
     x;
     y;
@@ -93,7 +93,7 @@ scene.add(light)
 
 // Sphere Geometry
 
-const earthGeometry = new THREE.SphereGeometry(32);
+const earthGeometry = new THREE.SphereGeometry(40);
 const earthTexture = new THREE.TextureLoader(loaderManager).load('./earth.jpg');
 const earthMaterial = new THREE.MeshStandardMaterial( {map:earthTexture,transparent:true});
 const earth = new THREE.Mesh(earthGeometry,earthMaterial);
