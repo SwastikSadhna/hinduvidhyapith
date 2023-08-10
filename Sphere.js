@@ -26,8 +26,8 @@ const avatarImgs = [
 ]
 
 class AvatarCard{
-    static height=35;
-    static width=26;
+    static height=40; // 35, 26 , earth : 24
+    static width=30;
     texture;
     x;
     y;
@@ -55,10 +55,16 @@ class AvatarCard{
 }
 
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(60,window.innerWidth/window.innerHeight,0.1,1000);
+const camera = new THREE.PerspectiveCamera(90,window.innerWidth/window.innerHeight,0.1,1000);
 const renderer = new THREE.WebGLRenderer({antialias:true});
 const orbit = new OrbitControls(camera, renderer.domElement);
-
+const loaderManager = new THREE.LoadingManager(
+()=>{
+    console.log("loaded Contents")
+},
+(url,loaded,total)=>{
+    console.log(loaded)
+});
 // camera.position.set(-90,140,140);
 // camera.position.set(0,120,180);
 camera.position.set(0,0,200);
@@ -77,7 +83,7 @@ const axesHelper = new THREE.AxesHelper(100);
 // scene.add(axesHelper);
 
 // Setting up background
-const background = new THREE.TextureLoader().load('./IMG/Vishnu-avatar/background.webp');
+const background = new THREE.TextureLoader(loaderManager).load('./IMG/Vishnu-avatar/background.webp');
 scene.background = background;
 
 // Light 
@@ -87,8 +93,8 @@ scene.add(light)
 
 // Sphere Geometry
 
-const earthGeometry = new THREE.SphereGeometry(24);
-const earthTexture = new THREE.TextureLoader().load('./earth.jpg');
+const earthGeometry = new THREE.SphereGeometry(32);
+const earthTexture = new THREE.TextureLoader(loaderManager).load('./earth.jpg');
 const earthMaterial = new THREE.MeshStandardMaterial( {map:earthTexture,transparent:true});
 const earth = new THREE.Mesh(earthGeometry,earthMaterial);
 earth.position.set(0,0,0)
@@ -110,16 +116,21 @@ for(let i=0; i<avatars; i++){
 }
 
 const bg = [
-    './IMG/Vishnu-avatar/temp-bg.jpg',
-    './earth.jpg',
-    './IMG/Vishnu-avatar/temp-bg.jpg',
-    './IMG/Vishnu-avatar/temp-bg.jpg',
-    './IMG/Vishnu-avatar/temp-bg.jpg',
-    './IMG/Vishnu-avatar/temp-bg.jpg'
+    './nirmal/left.jpg',    // left
+    './nirmal/right.jpg',    // left
+    './nirmal/up.jpg',    // left
+    './nirmal/floor.png',    // left
+    './nirmal/back.jpg',    // left
+    './nirmal/front.jpg'  // left
+ //   './rightside temple (1).jpg', // right
+   // './upside temple.jpg', // top
+    //'./floorside temple.png', //bottom
+    //'./backside temple.jpg',    // back
+    //'./frontside temple.jpg'    // front
 ];
 
-// const newBg = new THREE.CubeTextureLoader().load(bg);
-// scene.background = newBg;
+const newBg = new THREE.CubeTextureLoader(loaderManager).load(bg);
+scene.background = newBg;
 
 renderer.render(scene, camera);
 
