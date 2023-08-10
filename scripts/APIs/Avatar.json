@@ -1,0 +1,26 @@
+{
+    "Avatars":{
+        "Vishnu":[
+            {
+                "id":1,
+                "name":"Matsya",
+                "image":"./IMG/Vishnu-avatar/Matsya-avatar.png",
+                "Books":"https://books.google.co.in/books?id=yS1AAQAAIAAJ&q=matsya+consort&redir_esc=y",
+                "yug":"Satya yug",
+                "temples":"Chennakeshava Temple",
+                "sloka":"Om Namo Bhagavate Matsya Devaya",
+                "festival":"Matsya Jayanti",
+                "details":"Matsya is said to be the avatar that rescued the first man, as well as other creatures of the earth, from a great flood. Matsya is sometimes depicted as a great fish or as a human torso connected to the tail of a fish."
+            },
+            {
+                "id":2,
+                "name":"Kurma",
+                "image":"Matsya-avatar.png",
+                "Books":null,
+                "yug":null,
+                "details":null
+            }
+        ],
+        "folder":"./IMG/Vishnu-avatar/"
+    }
+}
