@@ -43,7 +43,7 @@ class AvatarCard{
         this.z = z;
         
         this.geometry = new THREE.BoxGeometry(AvatarCard.width,AvatarCard.height);
-        this.texture = new THREE.TextureLoader().setPath('./IMG/Vishnu-avatar/').load(img);
+        this.texture = new THREE.TextureLoader(loader).setPath('./IMG/Vishnu-avatar/').load(img);
         this.material = new THREE.MeshStandardMaterial({map:this.texture,transparent:true});
         this.obj = new THREE.Mesh(this.geometry,this.material)
         this.obj.position.set(this.x,this.y,this.z);
@@ -58,13 +58,26 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(90,window.innerWidth/window.innerHeight,0.1,1000);
 const renderer = new THREE.WebGLRenderer({antialias:true});
 const orbit = new OrbitControls(camera, renderer.domElement);
-const loaderManager = new THREE.LoadingManager(
-()=>{
-    console.log("loaded Contents")
-},
-(url,loaded,total)=>{
-    console.log(loaded)
-});
+const progress = document.querySelector("#progress");
+const loader = new THREE.LoadingManager(
+    ()=>{
+        console.log("Jay Shree Ram")
+        document.querySelector("#loading1>center").innerText = "Loading Completed";
+        gsap.to(".loading",{
+            display:"none",
+            duration:1,
+            delay:0.5
+        })
+    },
+    (url,loaded,total)=>{
+        gsap.to(progress,{
+            value:(loaded * 100/total),
+            duration:0.2,
+            ease:"power2.out"
+        })
+    }
+);
+
 // camera.position.set(-90,140,140);
 // camera.position.set(0,120,180);
 camera.position.set(0,0,200);
@@ -83,7 +96,8 @@ const axesHelper = new THREE.AxesHelper(100);
 // scene.add(axesHelper);
 
 // Setting up background
-const background = new THREE.TextureLoader(loaderManager).load('./IMG/Vishnu-avatar/background.webp');
+
+const background = new THREE.TextureLoader(loader).load('background.jpg');
 scene.background = background;
 
 // Light 
@@ -94,7 +108,7 @@ scene.add(light)
 // Sphere Geometry
 
 const earthGeometry = new THREE.SphereGeometry(40);
-const earthTexture = new THREE.TextureLoader(loaderManager).load('./earth.jpg');
+const earthTexture = new THREE.TextureLoader(loader).load('./earth.jpg');
 const earthMaterial = new THREE.MeshStandardMaterial( {map:earthTexture,transparent:true});
 const earth = new THREE.Mesh(earthGeometry,earthMaterial);
 earth.position.set(0,0,0)
@@ -116,21 +130,18 @@ for(let i=0; i<avatars; i++){
 }
 
 // const bg = [
-//     './nirmal/left.jpg',    // left
-//     './nirmal/right.jpg',    // left
-//     './nirmal/up.jpg',    // left
-//     './nirmal/floor.png',    // left
-//     './nirmal/back.jpg',    // left
-//     './nirmal/front.jpg'  // left
+    // './nirmal/left.jpg',    // left
+    // './nirmal/right.jpg',    // left
+    // './nirmal/up.jpg',    // left
+    // './nirmal/floor.png',    // left
+    // './nirmal/back.jpg',    // left
+    // './nirmal/front.jpg'  // left
 //  //   './rightside temple (1).jpg', // right
 //    // './upside temple.jpg', // top
 //     //'./floorside temple.png', //bottom
 //     //'./backside temple.jpg',    // back
 //     //'./frontside temple.jpg'    // front
 // ];
-
-// const newBg = new THREE.CubeTextureLoader(loaderManager).load(bg);
-scene.background = new THREE.TextureLoader().load('background.jpg');
 
 renderer.render(scene, camera);
 

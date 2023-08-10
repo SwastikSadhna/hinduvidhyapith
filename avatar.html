@@ -9,9 +9,28 @@
             margin:0;
             padding: 0;
         }
+        #loading1{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .loading{
+          display: flex;
+          flex-direction: column;
+        }
+        #loading1>center{
+          color:white;
+          font-weight: 700;
+          font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
     </style>
+       <link rel="stylesheet" href="css/loading.css">
+       <link rel="icon" type="image/x-icon" href="IMG/logo_icon.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
    <script type="importmap">
         {
           "imports": {
@@ -22,8 +41,16 @@
       </script>
 </head>
 <body>
-    
-
+        <!-- loading -->
+        <div class="loading">
+          <div id="loading1">
+            <img src="IMG/loading.gif" height="50px">
+            <center> 3D Page is Loading...</center><br>
+          </div>
+          <div id="loading2">
+            <progress value="0" id="progress" max="100"></progress>
+          </div>
+          </div>
     <script src="Sphere.js" type="module"></script>
 
 </body>
