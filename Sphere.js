@@ -129,6 +129,18 @@ for(let i=0; i<avatars; i++){
     earth.add(avatar.obj);
 }
 
+renderer.render(scene, camera);
+
+function animation(time){
+    earth.rotation.y = time/4000;
+
+    renderer.render(scene, camera);
+    orbit.update();
+    renderer.setAnimationLoop(animation);
+}
+
+animation();
+
 // const bg = [
     // './nirmal/left.jpg',    // left
     // './nirmal/right.jpg',    // left
@@ -142,15 +154,3 @@ for(let i=0; i<avatars; i++){
 //     //'./backside temple.jpg',    // back
 //     //'./frontside temple.jpg'    // front
 // ];
-
-renderer.render(scene, camera);
-
-function animation(time){
-    earth.rotation.y = time/4000;
-
-    renderer.render(scene, camera);
-    orbit.update();
-    renderer.setAnimationLoop(animation);
-}
-
-animation();
