@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100%;
+    width: 100%;
+    background: url(../IMG/Bhajan-3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* 
+.box-1{
+  border: 2px solid black;
+}
+.box-2 iframe{
+    width: 40rem;
+    height: 28rem;
+    border: 8px solid black;
+} */
+/* media query stat from here */
