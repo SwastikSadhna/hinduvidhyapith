@@ -9,28 +9,54 @@ window.addEventListener("resize",function(){
     renderer.setSize(window.innerWidth,window.innerHeight);
 })
 
+// Loading API
+window.addEventListener( "load" ,async ()=>{
+    
+    const data = await API.getData();
+    
+    init();
+    generateAvatarCards(data);
+    // console.log(data)
+})
+
+class API{
+    static data;
+    static query;
+    static {
+        const q = new URLSearchParams(window.location.search);
+        API.query = q.get("god").toLowerCase();
+    }
+    static async getData(){
+        const response = await fetch("./scripts/APIs/Avatar.json");
+         API.data = await response.json();
+         AvatarCard.folder = API.data.folder;
+         API.data = API.data[API.query];
+         avatars = API.data.length;
+         return API.data;
+    };
+
+    static loadCardData(id){
+        const currentData = API.data.filter((value)=> value.id == id)
+        // console.log(currentData);
+        $("#cardImage").attr("src", AvatarCard.folder + currentData[0].image)
+        $("#cardName").text( currentData[0].name)
+        $("#cardBook").text( currentData[0].books ? currentData[0].books : " - ")
+        $("#cardFestival").text( currentData[0].festival ? currentData[0].festival : " - ")
+        $("#cardTemple").text( currentData[0].temples ? currentData[0].temples : " - ")
+        $("#cardSloka").text( currentData[0].sloka ? currentData[0].sloka : " - ")
+        $("#cardAbout").text( currentData[0].about ? currentData[0].about : " - ")
+        $("#cardYug").text( currentData[0].yug ? currentData[0].yug : " - ")
+    }   
+
+}
+
 // IMP PARAMETERS
-const avatars = 10;
-const radius = avatars*10;
-
-
-const avatarImgs = [
-    './Matsya-avatar.png',
-    './Kurma-avatar.png',
-    './Vamana-avatar.png',
-    './Varaha-avatar.png',
-    './Parsuram-avatar.png',
-    './Balaram-avatar.png',
-    './Ram-avatar.png',
-    './Krishna-avatar.png',
-    './Narasimha-avatar.png',
-    './Kalki-avatar.png'
-]
-
+let avatars,radius;
 // AVATAR CARD CLASSS
 class AvatarCard{
-    static height=50; // 35, 26 , earth : 24
-    static width=43;
+    static height= avatars > 15 ? 35 : 50; // 35, 26 , earth : 24
+    static width=avatars > 15 ? 26 : 43;
+    static folder;
     texture;
     x;
     y;
@@ -39,18 +65,20 @@ class AvatarCard{
     img;
     material;
     obj;
+    id;
 
-    constructor(img,x,y,z){
+    constructor(id,img,x,y,z){
         this.x = x;
         this.y = y;
         this.z = z;
         
         this.geometry = new THREE.BoxGeometry(AvatarCard.width,AvatarCard.height);
-        this.texture = new THREE.TextureLoader(loader).setPath('./IMG/Vishnu-avatar/').load(img);
+        this.texture = new THREE.TextureLoader(loader).setPath("./IMG/Avatars/").load(img);
         this.material = new THREE.MeshStandardMaterial({map:this.texture,transparent:true});
         this.obj = new THREE.Mesh(this.geometry,this.material)
         this.obj.position.set(this.x,this.y,this.z);
-        this.obj.type = "avatar"
+        this.obj.type = "avatar";
+        this.obj.cardId = id;
     }
 
      add(){
@@ -61,7 +89,9 @@ class AvatarCard{
 
 
 // ALL VARIABLES
-let stopAnimation = true;
+let stopAnimation = false; // Variable that is flag for animation
+let cardOpened = false;    // Variable specifies whether the card is opened or what
+
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(90,window.innerWidth/window.innerHeight,0.1,1000);
 const renderer = new THREE.WebGLRenderer({antialias:true});
@@ -89,14 +119,23 @@ const loader = new THREE.LoadingManager(
     }
 );
 
+function init(){
 // camera.position.set(-90,140,140);
 // camera.position.set(0,120,180);
-camera.position.set(0,0,200);
+if(avatars >= 15){
+    camera.position.z = 280;
+    radius = avatars*10;
+}
+else{
+camera.position.z = 200;
+radius = avatars*12;
+}
 camera.updateProjectionMatrix();
 
-orbit.maxDistance = 200;
-orbit.minDistance = 150;
-
+orbit.maxDistance = camera.position.z + 20;
+orbit.minDistance = camera.position.z - 30;
+// orbit.rotationSpeed = 0.4
+}
 
 renderer.setSize(window.innerWidth,window.innerHeight);
 document.body.appendChild(renderer.domElement);
@@ -121,8 +160,9 @@ earth.position.set(0,0,0)
 scene.add(earth);
 
 // AVATAR GENERATOR
-for(let i=0; i<avatars; i++){
-    const avatar = new AvatarCard(avatarImgs[i],70,0,0);
+function generateAvatarCards(data){
+for(let i=0; i< data.length; i++){
+    const avatar = new AvatarCard(data[i].id,data[i].image,70,0,0);
 
     const spherical = new THREE.Spherical();
     spherical.radius = radius;
@@ -135,17 +175,19 @@ for(let i=0; i<avatars; i++){
 
     earth.add(avatar.obj);
 }
-
 renderer.render(scene, camera);
+animation();
+}
+
 
 // ANIMATOR FUNCTION
 
 function animation(time){
-    // earth.rotation.y = time/4000;
+    earth.rotation.y = time/4000;
 
     renderer.render(scene, camera);
     orbit.update();
-    if(stopAnimation)
+    if(!stopAnimation)
     renderer.setAnimationLoop(animation);
     else
     renderer.setAnimationLoop(null);
@@ -153,7 +195,7 @@ function animation(time){
 
 }
 
-animation();
+
 
 // display avatar
 const raycaster = new THREE.Raycaster();
@@ -162,8 +204,10 @@ const pointer = new THREE.Vector2();
 window.addEventListener("click",AvatarSelected)
 
 function AvatarSelected(event){
+    if(cardOpened) return;
     pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
     pointer.y = - (event.clientY / window.innerHeight) * 2 + 1;
+    
     clickRender();
 }
 
@@ -175,18 +219,38 @@ function clickRender() {
 	// calculate objects intersecting the picking ray
 	const intersects = raycaster.intersectObjects( scene.children );
 
-    console.log(intersects[0])
+    // console.log(intersects[0])
 
-    if(intersects.length > 0 && intersects[0].object.type == "avatar")
+    if(intersects && intersects.length > 0 && intersects[0].object.type == "avatar")
     {
-        stopAnimation = false;
+        stopAnimation = true;
         const card = intersects[0].object;
-
-        card.position.z = camera.position.z
+        // console.log(card);
+        // document.querySelector("#wholeCard").style.display = "initial";
+        API.loadCardData(card.cardId);
+        gsap.to("#wholeCard",{
+            display:"initial",
+            opacity:1,
+            delay:0.2,
+            ease: Power0.easeOut
+        })
         renderer.render( scene, camera );
+        cardOpened = true;
     }
 
 }
+
+document.querySelector(".btn-close").addEventListener("click",()=>{
+    gsap.to("#wholeCard",{
+        display:"none",
+        opacity:0,
+        delay:0.2,
+        ease: Power0.easeOut
+    })
+    cardOpened = false;
+    stopAnimation = false;
+    renderer.setAnimationLoop(animation);
+})
 
 
 // const bg = [
