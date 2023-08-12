@@ -50,6 +50,8 @@ let TotalChapter = 0;
 // Getter Function
 
 window.addEventListener("load", async () => {
+    
+    speechSynthesis.cancel();
     /* LOADING EFFECT CODE */
     try {
         let req = await fetch(urlChapter, options);
@@ -214,6 +216,9 @@ function switchSloka(contentObj) {
 
 let msg;
 let speech = window.speechSynthesis;
+speech.playing = false;
+speech.pausing = false;
+
 $(".audioControl").click(function (a) {
     $(a.target).toggleClass("fa-pause"); //<i class="fa-solid fa-pause"></i>
     $(a.target).toggleClass("fa-play"); //<i class="fa-solid fa-pause"></i>
@@ -224,14 +229,31 @@ $(".audioControl").click(function (a) {
     console.log(string);
     msg = new SpeechSynthesisUtterance(string);
 
+    msg.onend = ()=>{
+        $(a.target).addClass("fa-play");
+        $(a.target).removeClass("fa-pause");
+    }
+
     // Set the language code to Hindi
     msg.lang = "hi-IN";
 
-    if(speech.speaking)
-        speech.cancel();
-    speech.speak(msg)
-
-    console.log(speechSynthesis.speaking + " " + speechSynthesis.paused + " " + speechSynthesis.pending)
+    if(!(speech.playing)){
+        console.log("start")
+        speech.playing = true;
+        speech.pausing = false;
+        if(speech.speaking){
+        speech.resume();
+        return;
+        }
+        speech.speak(msg);
+        return;
+    }
+    else if(speech.playing){
+        speech.pause();
+        speech.playing = false;
+        speech.pausing = true;
+        return;
+    }
 })
 
 function removePunctuation(text) {
