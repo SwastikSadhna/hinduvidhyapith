@@ -13,11 +13,8 @@
     <link rel="stylesheet" href="css/book_page.css">
     <link rel="stylesheet" href="css/loading.css">
     <link rel="icon" type="image/x-icon" href="IMG/logo_icon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="https://kit.fontawesome.com/719270a6fc.js" crossorigin="anonymous"></script>
-    <title>Home | hinduism.com</title>
+    <script src="./scripts/TTS.js" type="module"></script>
+       <title>Home | hinduism.com</title>
     
 </head>
 
@@ -247,6 +244,10 @@
                     māmakāḥ pāṇḍavāśhchaiva kimakurvata sañjaya</p> -->
         </div>
         <div class="rounded" id="shloka_box" style="background-color: white;">
+            <div class="controls" >
+                <i class="fa-play fa-solid audioControl" data-id="tippni"></i>
+            </div>
+            
             <h4><u>अनुवाद</u></h4>
 
             <p id="tippni">धृतराष्ट्र ने कहा: हे संजय, कुरूक्षेत्र के पवित्र मैदान में एकत्र होकर और युद्ध की इच्छा से मेरे पुत्रों और पांडु के पुत्रों ने क्या किया?</p>
@@ -254,6 +255,9 @@
         </div>
 
         <div class="rounded" id="shloka_box" style="background-color: white;">
+            <!-- <div class="controls" >
+                <i class="fa-play fa-solid audioControl" data-id="description"></i>
+            </div> -->
             <h4 style="text-align: center;"><u>टिप्पणी</u></h4><br>
             <p style="text-align: left;"><i class="fa-solid fa-arrow-right"></i><span id="description"></span></p>
             </div>
