@@ -8,6 +8,7 @@ window.addEventListener("load",()=>{
     b.setAttribute("href","./css/audioControls.css");
     document.head.appendChild(a)
     document.head.appendChild(b)
+    speechSynthesis.cancel();
 })
 
 
@@ -22,15 +23,11 @@ $(".audioControl").click(function (a) {
 
     let text = a.target.dataset.id;
     text = $("#" + text).text();
+    console.log(text);
     const string = removePunctuation(text);
     console.log(string);
-    // msg = new SpeechSynthesisUtterance(string);
 
-//     const text = "This is a long paragraph. This is another paragraph. This is a third paragraph.";
-// const paragraphs = text.split("\n");
-// for (const paragraph of paragraphs) {
-//   const utterance = new SpeechSynthesisUtterance(paragraph);
-//   speechSynthesis.speak(utterance);
+
     msg = new SpeechSynthesisUtterance(string);
     msg.onend = ()=>{
         $(a.target).addClass("fa-play");

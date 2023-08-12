@@ -1,7 +1,9 @@
 
 .controls{
     position:absolute;
+    right:25px;
     background-color: white;
     width:25px;
     height: 25px;
+    cursor: pointer;
 }

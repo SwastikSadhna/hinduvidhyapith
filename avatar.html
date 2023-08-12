@@ -32,8 +32,13 @@
     #main-container {
     height: 70vh;
     overflow-y: scroll;
+    position:relative;
 }
 
+    .audioControl{
+      position:absolute;
+      right:25px;
+    }
     #wholeCard{
       position:absolute;
       z-index:20;
@@ -48,6 +53,7 @@
 .text-black {
     color: black;
 }
+  
 
     </style>
        <link rel="stylesheet" href="css/loading.css">
@@ -88,28 +94,40 @@
                 aria-label="Close"></button>
         
               <div id="main-container" class="mt-5">
+
                       <!-- intro part -->
                 <div class="row g-0 overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
                   <div class="col-12 col-sm-5 col-md-4 col-lg-3">
                     <img class="bd-placeholder-img" width="200" id="cardImage" height="200" src="IMG/Avatars/Matsya-avatar.png"></img>
                     <h3 class="my-4 text-black" id="cardName">Matsya</h3>
                   </div>
+
                   <div class="col px-lg-4 px-3 d-flex flex-column position-static" style="text-align: left;">
                     <p class="mb-3"><code>Yug:</code><span id="cardYug"></span> </p>
                     <p class="mb-3"><code>Books:</code><span id="cardBook"></span></p>
-                    <p class="mb-3"> <code>Shloka:</code> <span id="cardSloka"></span></p>
+                    <p class="mb-3"> <code>Shloka:</code> <span id="cardSloka"></span>
+                      <div class="controls" >
+                        <i class="fa-play fa-solid audioControl" data-id="cardSloka"></i>
+                      </div>
+                    </p>
                     <p class="mb-3"> <code>Festival:</code><span id="cardFestival"></span></p>
                     <p class="mb-3"> <code>Temples:</code><span id="cardTemple"></span></p>
-                    <p class="mb-3" id="cardAbout"></p><br>
-        
+                    
+                    <p class="mb-3"><span id="cardAbout"></span>
+                      <div class="controls" >
+                        <i class="fa-play fa-solid audioControl" data-id="cardAbout"></i>
+                      </div>
+                    </p><br>
                     <a href="https://en.wikipedia.org/wiki/Matsya"><button class="btn btn-outline-primary col-md-5 col-lg-3">Read Full Information</button></a>
+
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
-    <script src="Sphere.js" type="module"></script>
+        <script src="./scripts/TTS.js" ></script>
+        <script src="Sphere.js" type="module"></script>
 
 </body>
 </html>
