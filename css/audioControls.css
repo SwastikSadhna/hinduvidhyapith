@@ -1,7 +1,18 @@
 
 .controls{
-    position:absolute;
-    right:25px;
+    /* position:absolute;
+    left:570px;top:110px; */
+    float: right;
+    background-color: white;
+    width:25px;
+    height: 25px;
+    cursor: pointer;
+
+}
+.control{
+    /* position:absolute;
+    top:190px;left:850px; */
+    float: left;
     background-color: white;
     width:25px;
     height: 25px;
