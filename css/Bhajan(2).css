@@ -25,7 +25,9 @@ body{
 /* media query stat from here */
 @media (max-width:1000px) {
     body{
-        background: url(../IMG/Bhajan-2.jpg);
+        background: url(../IMG/Bhajan-3.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     .container{
         display: block;
