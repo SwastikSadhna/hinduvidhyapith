@@ -16,6 +16,7 @@
     padding: 10px;
     margin: 20px 0px;
     text-align: center;
+    position: relative;
 }
 
 #content-part{
@@ -26,4 +27,12 @@
     #content-part {
         margin-left: 5px;
     }
+}
+
+.controls{
+    position:absolute;
+    right:20px;
+    background-color: white;
+    width:25px;
+    height: 25px;
 }
