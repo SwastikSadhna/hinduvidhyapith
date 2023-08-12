@@ -30,13 +30,14 @@
     }
 
     #main-container {
-    height: 80vh;
+    height: 70vh;
     overflow-y: scroll;
 }
+
     #wholeCard{
       position:absolute;
       z-index:20;
-      top:50%;
+      top:45%;
       left:50%;
       transform: translate(-50%,-50%);
       width:80vw;
@@ -79,17 +80,14 @@
             <progress value="0" id="progress" max="100"></progress>
           </div>
           </div>
-<section id="wholeCard">
+<section id="wholeCard" class="md-11 sm-11">
           <div class="container mt-5">
             <div class="position-relative text-center text-muted bg-body border border-dashed rounded-3">
               <button type="button"
                 class="position-absolute top-0 end-0 p-3 m-2 btn-close bg-secondary bg-opacity-10 rounded-pill"
                 aria-label="Close"></button>
-              <svg class="bi mt-2 mb-3" width="0" height="0">
-                <use xlink:href="#check2-circle"></use>
-              </svg>
         
-              <div id="main-container">
+              <div id="main-container" class="mt-5">
                       <!-- intro part -->
                 <div class="row g-0 overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
                   <div class="col-12 col-sm-5 col-md-4 col-lg-3">
