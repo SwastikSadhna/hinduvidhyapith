@@ -251,8 +251,8 @@ document.querySelector(".btn-close").addEventListener("click",()=>{
     stopAnimation = false;
     speechSynthesis.cancel();
     speech.playing = false;
-    $(".audioControl").toggleClass("fa-pause"); //<i class="fa-solid fa-pause"></i>
-    $(".audioControl").toggleClass("fa-play"); //<i class="fa-solid fa-pause"></i>
+    $(".audioControl").removeClass("fa-pause"); //<i class="fa-solid fa-pause"></i>
+    $(".audioControl").addClass("fa-play"); //<i class="fa-solid fa-pause"></i>
     renderer.setAnimationLoop(animation);
 })
 
