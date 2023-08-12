@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100%;
+    width: 100%;
+    background: url(../IMG/Bhajan.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.col iframe{
+    width: 45rem;
+    height: 26rem;
+    margin-left: 5rem;
+    border: 2px solid black;
+}
+.box-2{
+    background: url(../IMG/background.jpg);
+    margin-left: 5rem ;
+    width: auto;
+}
+/* media query stat from here */
+@media (max-width:1000px) {
+    body{
+        background: url(../IMG/Bhajan-3.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .container{
+        display: block;
+    }
+    .col iframe{
+        width: auto;
+        height: auto;
+        margin-left: auto;
+    }
+    .box-2{
+        margin-left: 0.5rem;
+        width: 100%;
+    }
+}
