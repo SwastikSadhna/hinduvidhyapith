@@ -232,10 +232,13 @@ $(".audioControl").click(function (a) {
     msg.onend = ()=>{
         $(a.target).addClass("fa-play");
         $(a.target).removeClass("fa-pause");
+        speech.playing = false;
+        speech.pausing = false;
     }
 
     // Set the language code to Hindi
     msg.lang = "hi-IN";
+    msg.rate = 0.9;
 
     if(!(speech.playing)){
         console.log("start")
@@ -258,9 +261,10 @@ $(".audioControl").click(function (a) {
 
 function removePunctuation(text) {
     // create a RegEx that matches any punctuation marks except . and ,
-    let re = /[2a-zA-Z0-9.,\s]/g;
+    // let re = /[2a-zA-Z0-9.,\s]/g; // str.replace(, "");
+    let re = /[^a-zA-Z0-9 _-]/g; // str.replace(, "");
     // use the replace method to remove the punctuation marks with an empty string
-    let newText = text.replace(re, "");
+    let newText = text.replace(/[^a-zA-Z ,\u0900-\u097F]/g, "")
     // return the new text
     return newText;
   }
