@@ -25,6 +25,11 @@ class API{
     static {
         const q = new URLSearchParams(window.location.search);
         API.query = q.get("god").toLowerCase();
+        const backgroundAudio = document.createElement("audio");
+        backgroundAudio.src = "./IMG/vishnu-bg.mp3";
+        backgroundAudio.autoplay = true;
+        backgroundAudio.loop = true;
+        
     }
     static async getData(){
         const response = await fetch("./scripts/APIs/Avatar.json");
