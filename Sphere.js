@@ -18,23 +18,27 @@ window.addEventListener( "load" ,async ()=>{
     generateAvatarCards(data);
     // console.log(data)
 })
-
+let backgroundAudio;
 class API{
     static data;
     static query;
     static {
         const q = new URLSearchParams(window.location.search);
         API.query = q.get("god").toLowerCase();
-        const backgroundAudio = document.createElement("audio");
-        backgroundAudio.src = "./IMG/vishnu-bg.mp3";
-        backgroundAudio.autoplay = true;
-        backgroundAudio.loop = true;
+        // backgroundAudio = document.createElement("audio");
+        // backgroundAudio.src = "./IMG/vishnu-bg.mp3";
+        // backgroundAudio.autoplay = true;
+        // backgroundAudio.loop = true;
         
     }
     static async getData(){
         const response = await fetch("./scripts/APIs/Avatar.json");
          API.data = await response.json();
          AvatarCard.folder = API.data.folder;
+         backgroundAudio = document.createElement("audio");
+         backgroundAudio.autoplay = true;
+         backgroundAudio.loop = true;
+         backgroundAudio.src = API.data[API.query + "-bg-music"];
          API.data = API.data[API.query];
          avatars = API.data.length;
          return API.data;

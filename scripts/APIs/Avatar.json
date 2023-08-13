@@ -433,5 +433,8 @@
             "sloka": "ॐ ह्रीं श्रीं क्लीं महा लक्ष्म्यै नमः",
             "about": "वह धन, समृद्धि और भाग्य की देवी हैं। वह दस महाविद्याओं में से दसवीं हैं। वह प्रचुरता और पूर्णता की शक्ति का प्रतिनिधित्व करती है।"
         }
-    ]
+    ],
+    "vishnu-bg-music": "./music/vishnu-bg.mp3",
+    "shiva-bg-music": "./music/shiva-bg.mp3",
+    "dashmahavidhya-bg-music": "./music/devi-bg.mp3"
 }
