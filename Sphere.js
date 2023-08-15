@@ -38,7 +38,7 @@ class API{
          backgroundAudio = document.createElement("audio");
          backgroundAudio.autoplay = true;
          backgroundAudio.loop = true;
-         backgroundAudio.src = API.data[API.query + "-bg-music"];
+        //  backgroundAudio.src = API.data[API.query + "-bg-music"];
          API.data = API.data[API.query];
          avatars = API.data.length;
          return API.data;
@@ -100,7 +100,7 @@ class AvatarCard{
 // ALL VARIABLES
 let stopAnimation = false; // Variable that is flag for animation
 let cardOpened = false;    // Variable specifies whether the card is opened or what
-
+const avatarCards = new Array(avatars);
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(90,window.innerWidth/window.innerHeight,0.1,1000);
 const renderer = new THREE.WebGLRenderer({antialias:true});
@@ -124,7 +124,7 @@ const loader = new THREE.LoadingManager(
             value:(loaded * 100/total),
             duration:0.2,
             ease:"power2.out"
-        })
+        });
     }
 );
 
@@ -181,7 +181,7 @@ for(let i=0; i< data.length; i++){
     cartesian.setFromSpherical(spherical);
     avatar.obj.position.copy(cartesian);
     avatar.obj.rotation.y = spherical.theta;
-
+    avatarCards.push(avatar.obj)
     earth.add(avatar.obj);
 }
 renderer.render(scene, camera);
@@ -250,12 +250,17 @@ function clickRender() {
 }
 
 document.querySelector(".btn-close").addEventListener("click",()=>{
+    let cardImage = { 
+        height : document.getElementById("cardImage").style.height,
+        width : document.getElementById("cardImage").style.width
+    }
+
     gsap.to("#wholeCard",{
         display:"none",
         opacity:0,
         delay:0.2,
         ease: Power0.easeOut
-    })
+    });
     cardOpened = false;
     stopAnimation = false;
     speechSynthesis.cancel();
@@ -264,18 +269,3 @@ document.querySelector(".btn-close").addEventListener("click",()=>{
     $(".audioControl").addClass("fa-play"); //<i class="fa-solid fa-pause"></i>
     renderer.setAnimationLoop(animation);
 })
-
-
-// const bg = [
-    // './nirmal/left.jpg',    // left
-    // './nirmal/right.jpg',    // left
-    // './nirmal/up.jpg',    // left
-    // './nirmal/floor.png',    // left
-    // './nirmal/back.jpg',    // left
-    // './nirmal/front.jpg'  // left
-//  //   './rightside temple (1).jpg', // right
-//    // './upside temple.jpg', // top
-//     //'./floorside temple.png', //bottom
-//     //'./backside temple.jpg',    // back
-//     //'./frontside temple.jpg'    // front
-// ];
