@@ -82,13 +82,14 @@
                         <li class="nav-item dropdown itemlist" id="nav-item">
                             <a class="nav-link dropdown-toggle" href="./Mantra-project/Know_sanatan.html" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                सनातन
+                                सनातन <span class="badge bg-secondary">New</span>
                             </a>
                             <ul class="dropdown-menu itemlist" id="navigation" id="nav-item">
                                 <li><a class="dropdown-item" href="./4Veds.html">4 वेद</a></li>
                                 <li><a class="dropdown-item" href="./18puran.html">18 पुराण</a></li>
                                 <li><a class="dropdown-item" href="./33Kotidevta.html">33 कोटि देवता</a></li>
                                 <li><a class="dropdown-item" href="#">108 उपनिषद</a></li>
+                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Today's Story <span class="badge bg-secondary">New</span></a> </li>
                             </ul>
                         </li>
 
@@ -103,6 +104,38 @@
                 </div>
             </div>
         </nav>
+
+        <!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Today's Story</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">  
+            <div>
+                <img src="https://wallpapercave.com/wp/wp4012168.jpg" class="img-fluid" alt="Krishna">
+            </div>
+            <div class="story">
+
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">अन्य कहानियाँ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    $(document).ready(function(){
+      $(".story").load("story.html");
+    })
+  
+  </script>
+
 
         <!-- image sliders -->
         <div id="carouselExampleCaptions" class="carousel slide">
