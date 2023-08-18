@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+@media (max-width:580px) {
+    .navbar h3 {
+        display: none;
+    }
+
+    span {
+        display: none;
+    }
+}
+
+@media (max-width:840px) {
+    .box-1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box-1 iframe {
+        width: auto;
+        padding: auto;
+        margin-top: 1rem;
+    }
+    audio{
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
