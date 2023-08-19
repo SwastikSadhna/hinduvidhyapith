@@ -71,3 +71,11 @@
     border: 2px solid black;
     height: 400px;
 }
+  
+  #multicolor{
+    color: rgba(255, 255, 255, 0.589);
+    font-weight: 400;
+     display: flex;
+     margin-top: -10px;
+     margin-bottom: 30px;
+  }
