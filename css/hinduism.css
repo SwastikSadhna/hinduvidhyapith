@@ -79,3 +79,12 @@
      margin-top: -10px;
      margin-bottom: 30px;
   }
+  #hov{
+    overflow: hidden;
+  }
+  #hov img{
+    transition: all ease 1s;
+  }
+  #hov img:hover{
+    scale: 1.2;
+  }
