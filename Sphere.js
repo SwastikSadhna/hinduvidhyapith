@@ -37,8 +37,9 @@ class API{
          AvatarCard.folder = API.data.folder;
          backgroundAudio = document.createElement("audio");
          backgroundAudio.autoplay = true;
-         backgroundAudio.loop = true;
-         backgroundAudio.src = API.data[API.query + "-bg-music"];
+         backgroundAudio.volume = 0.1;
+        //  backgroundAudio.loop = true;
+        //  backgroundAudio.src = API.data[API.query + "-bg-music"];
          API.data = API.data[API.query];
          avatars = API.data.length;
          return API.data;
@@ -83,7 +84,7 @@ class AvatarCard{
         
         this.geometry = new THREE.BoxGeometry(AvatarCard.width,AvatarCard.height);
         this.texture = new THREE.TextureLoader(loader).setPath("./IMG/Avatars/").load(img);
-        this.material = new THREE.MeshStandardMaterial({map:this.texture,transparent:true});
+        this.material = new THREE.MeshStandardMaterial({map:this.texture, specular:0xffffff});
         this.obj = new THREE.Mesh(this.geometry,this.material)
         this.obj.position.set(this.x,this.y,this.z);
         this.obj.type = "avatar";
@@ -148,12 +149,14 @@ orbit.minDistance = camera.position.z - 30;
 
 renderer.setSize(window.innerWidth,window.innerHeight);
 document.body.appendChild(renderer.domElement);
-scene.add(orbit);
 
 // Setting up background
 
-const background = new THREE.TextureLoader(loader).load('background.jpg');
+const background = new THREE.TextureLoader(loader).load('IMG/Avatars/aarti.jpg');
+
 scene.background = background;
+
+
 
 // Light 
 const light = new THREE.AmbientLight(0xffffff,2);
@@ -167,6 +170,11 @@ const earthMaterial = new THREE.MeshStandardMaterial( {map:earthTexture,transpar
 const earth = new THREE.Mesh(earthGeometry,earthMaterial);
 earth.position.set(0,0,0)
 scene.add(earth);
+
+// SpotLight
+const spotLight  = new THREE.SpotLight(0xffffff, 50, 30, Math.PI * 0.5, 0.5, 2);
+spotLight.position.y = 5;
+scene.add(spotLight)
 
 // AVATAR GENERATOR
 function generateAvatarCards(data){
